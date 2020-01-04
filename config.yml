@@ -1,5 +1,5 @@
 baseURL: https://blog.zenqy.tk/
-publishDir: doc #输出目录
+publishDir: docs #输出目录
 theme: pure
 title: ZenQy's Blog
 defaultContentLanguage: en  # en/zh/...
@@ -94,7 +94,7 @@ params:
   # profile
   profile:
     enabled: true # Whether to show profile bar
-    avatar: img/avatar.png
+    avatar: avatar.png
     gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
     author: ZenQy
     author_title: 
@@ -116,9 +116,9 @@ params:
       enabled: true
       width: 40
       height: 40
-      url: img/favicon.ico
+      url: favicon.ico
     title: cccccccccccccccccccccc # 页面title
-    favicon: img/favicon.ico
+    favicon: favicon.ico
     board: <p>开始尝试写博客</p> # 公告牌
 
   # Share
@@ -133,9 +133,9 @@ params:
     type: gitalk # type disqus/gitalk/valine 启用哪种评论系统
     disqus: your_disqus_name # enter disqus shortname here
     gitalk: # gitalk. https://gitalk.github.io/
-      owner: https://github.com/ZenQy #必须. GitHub repository 所有者，可以是个人或者组织。
-      admin: https://github.com/ZenQy #必须. GitHub repository 的所有者和合作者 (对这个 repository 有写权限的用户)。
-      repo:  https://github.com/ZenQy/gitalk #必须. GitHub repository.
+      owner: zenqy #必须. GitHub repository 所有者，可以是个人或者组织。
+      admin: zenqy #必须. GitHub repository 的所有者和合作者 (对这个 repository 有写权限的用户)。
+      repo:  gitalk #必须. GitHub repository.
       ClientID: 8cef975f233522795b25 #必须. GitHub Application Client ID.
       ClientSecret: a60c90af509bb1f44ff137956639b16c321f0dfd #必须. GitHub Application Client Secret.
     valine: # Valine. https://valine.js.org
