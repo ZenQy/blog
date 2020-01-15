@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ZenQy&#39;s Blog</title>
+    <link>https://blog.zenqy.tk/</link>
+    <description>Recent content on ZenQy&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 02 Nov 2019 20:51:14 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.zenqy.tk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://blog.zenqy.tk/about/</link>
+      <pubDate>Sat, 02 Nov 2019 20:51:14 +0800</pubDate>
+      
+      <guid>https://blog.zenqy.tk/about/</guid>
+      <description>H1 H2 H3 H4 H5 H6 Duplicate Header Duplicate Header {#section-id}
+1 2 3 4 5 6 7  // Fenced **with** highlighting function doIt() { for (var i = 1; i &amp;lt;= slen ; i^^) { setTimeout(&amp;#34;document.z.textdisplay.value = newMake()&amp;#34;, i*300); setTimeout(&amp;#34;window.status = newMake()&amp;#34;, i*300); } }   199 200 201 202 203 204  function doIt() { for (var i = 1; i &amp;lt;= slen ; i^^) { setTimeout(&amp;#34;document.</description>
+    </item>
+    
+  </channel>
+</rss>
