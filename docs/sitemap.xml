@@ -2,28 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.zenqy.tk/post/2020/01/2020%E5%B9%B4%E8%AE%A1%E5%88%92/</loc>
-    <lastmod>2020-01-01T19:37:29+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.zenqy.tk/post/</loc>
-    <lastmod>2020-01-01T19:37:29+08:00</lastmod>
+    <lastmod>2020-04-11T19:37:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.zenqy.tk/tags/</loc>
-    <lastmod>2020-01-01T19:37:29+08:00</lastmod>
+    <lastmod>2020-04-11T19:37:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.zenqy.tk/</loc>
+    <lastmod>2020-04-11T19:37:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.zenqy.tk/tags/%E5%88%B7%E6%9C%BA/</loc>
+    <lastmod>2020-04-11T19:37:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.zenqy.tk/tags/%E6%9C%BA%E9%A1%B6%E7%9B%92/</loc>
+    <lastmod>2020-04-11T19:37:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.zenqy.tk/tags/%E9%AD%94%E7%99%BE%E7%9B%92/</loc>
+    <lastmod>2020-04-11T19:37:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.zenqy.tk/post/2020/04/%E9%AD%94%E7%99%BE%E7%9B%92cm201-2%E5%88%B7%E6%9C%BA/</loc>
+    <lastmod>2020-04-11T19:37:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.zenqy.tk/post/2020/01/2020%E5%B9%B4%E8%AE%A1%E5%88%92/</loc>
     <lastmod>2020-01-01T19:37:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
