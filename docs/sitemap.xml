@@ -2,22 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.zenqy.tk/tags/adnroid/</loc>
+    <lastmod>2020-10-24T11:37:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.zenqy.tk/tags/app/</loc>
+    <lastmod>2020-10-24T11:37:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.zenqy.tk/post/2020/10/24/my-android-app-list/</loc>
+    <lastmod>2020-10-24T11:37:29+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.zenqy.tk/post/</loc>
-    <lastmod>2020-04-11T19:37:29+08:00</lastmod>
+    <lastmod>2020-10-24T11:37:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.zenqy.tk/tags/</loc>
-    <lastmod>2020-04-11T19:37:29+08:00</lastmod>
+    <lastmod>2020-10-24T11:37:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.zenqy.tk/</loc>
-    <lastmod>2020-04-11T19:37:29+08:00</lastmod>
+    <lastmod>2020-10-24T11:37:29+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
