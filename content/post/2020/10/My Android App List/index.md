@@ -26,6 +26,7 @@ toc: true
 |     AnkiDroid     | [点击下载](https://github.com/ankidroid/Anki-Android/releases/latest) | 最新  |
 |       aegis       | [点击下载](https://github.com/beemdevelopment/Aegis/releases/latest)  | 最新  |
 |     贴吧lite      | [点击下载](https://github.com/HuanCheng65/TiebaLite/releases/latest)  | 最新  |
+|      Magisk       |    [点击下载](https://github.com/topjohnwu/Magisk/releases/latest)    | 最新  |
 
 ### 网盘
 
@@ -41,3 +42,4 @@ toc: true
 | 和包支付 | [点击下载](https://p.10086.cn/info/wap/sjqb/cpb/jsym/index.html) | 最新  | 官方  |
 | 作业信息 |     [点击下载](https://ahdl.jysoft.mobi/docs/app/index.html)     | 最新  | 官方  |
 | juicessh |            [点击下载](https://juicessh.com/changelog)            | 最新  | 官方  |
+| telegram |              [点击下载](https://telegram.org/apps)               | 最新  | 官方  |

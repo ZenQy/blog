@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ArchLinux on ZenQy&#39;s Blog</title>
+    <link>https://blog.zenqy.tk/tags/archlinux/</link>
+    <description>Recent content in ArchLinux on ZenQy&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 04 Dec 2020 19:29:32 +0800</lastBuildDate><atom:link href="https://blog.zenqy.tk/tags/archlinux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>现有系统安装ArchLinux</title>
+      <link>https://blog.zenqy.tk/post/2020/12/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinux/</link>
+      <pubDate>Fri, 04 Dec 2020 19:29:32 +0800</pubDate>
+      
+      <guid>https://blog.zenqy.tk/post/2020/12/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinux/</guid>
+      <description>前言 本人对比较喜欢ArchLinux，使用的vps基本对会使用vps2arch脚本，将系统变更为ArchLinux。今天从OracleClo</description>
+    </item>
+    
+  </channel>
+</rss>

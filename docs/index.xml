@@ -6,13 +6,22 @@
     <description>Recent content on ZenQy&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 24 Oct 2020 11:37:29 +0800</lastBuildDate><atom:link href="https://blog.zenqy.tk/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Dec 2020 19:29:32 +0800</lastBuildDate><atom:link href="https://blog.zenqy.tk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>现有系统安装ArchLinux</title>
+      <link>https://blog.zenqy.tk/post/2020/12/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinux/</link>
+      <pubDate>Fri, 04 Dec 2020 19:29:32 +0800</pubDate>
+      
+      <guid>https://blog.zenqy.tk/post/2020/12/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinux/</guid>
+      <description>前言 本人对比较喜欢ArchLinux，使用的vps基本对会使用vps2arch脚本，将系统变更为ArchLinux。今天从OracleClo</description>
+    </item>
+    
     <item>
       <title>My Android App List</title>
-      <link>https://blog.zenqy.tk/post/2020/10/24/my-android-app-list/</link>
+      <link>https://blog.zenqy.tk/post/2020/10/my-android-app-list/</link>
       <pubDate>Sat, 24 Oct 2020 11:37:29 +0800</pubDate>
       
-      <guid>https://blog.zenqy.tk/post/2020/10/24/my-android-app-list/</guid>
+      <guid>https://blog.zenqy.tk/post/2020/10/my-android-app-list/</guid>
       <description>商店 名称 链接 版本 备注 移动惠生活 点击下载 最新 应用宝 国网商旅云 点击下载 最新 应用宝 账号本子 点击下载 最新 酷安 轻启动 点击下载 最新 酷安 幕布 点击下载 最新 酷</description>
     </item>
     
