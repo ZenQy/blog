@@ -51,10 +51,10 @@ tar xzf archlinux-bootstrap-*-x86_64.tar.gz
 - 选择源
 
 ```
-echo http://mirrors.cat.net/archlinux/$repo/os/$arch' > root.x86_64/etc/pacman.d/mirrorlist
+echo 'Server = http://mirrors.cat.net/archlinux/$repo/os/$arch' > root.x86_64/etc/pacman.d/mirrorlist
 ```
 
-- chroot
+- chroot (这一步操作时会报错，但实际已成功chroot)
   
 ```
 /tmp/root.x86_64/bin/arch-chroot /tmp/root.x86_64/
@@ -95,7 +95,7 @@ rm -rf boot/*
 - 安装基础系统
 
 ```
-pacstrap /mnt base base-devel linux linux-firmware nano neofetch
+pacstrap /mnt base base-devel linux openssh nano neofetch
 ```
 
 - 创建fstab
@@ -105,7 +105,11 @@ pacstrap /mnt base base-devel linux linux-firmware nano neofetch
 ```
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
+- 拷贝resolv.conf
 
+```
+cp /etc/resolv.conf /mnt/etc/
+```
 - chroot，进入目标系统
   
 ```
