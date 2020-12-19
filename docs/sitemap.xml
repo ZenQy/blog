@@ -2,35 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.zenqy.tk/tags/archlinux/</loc>
-    <lastmod>2020-12-04T19:29:32+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.zenqy.tk/post/</loc>
-    <lastmod>2020-12-04T19:29:32+08:00</lastmod>
+    <lastmod>2020-12-05T11:31:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.zenqy.tk/tags/</loc>
-    <lastmod>2020-12-04T19:29:32+08:00</lastmod>
+    <lastmod>2020-12-05T11:31:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.zenqy.tk/tags/vps/</loc>
-    <lastmod>2020-12-04T19:29:32+08:00</lastmod>
+    <lastmod>2020-12-05T11:31:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.zenqy.tk/post/2020/12/vps%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/</loc>
+    <lastmod>2020-12-05T11:31:05+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://blog.zenqy.tk/</loc>
+    <lastmod>2020-12-05T11:31:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.zenqy.tk/tags/archlinux/</loc>
     <lastmod>2020-12-04T19:29:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

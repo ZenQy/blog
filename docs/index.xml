@@ -6,7 +6,16 @@
     <description>Recent content on ZenQy&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 04 Dec 2020 19:29:32 +0800</lastBuildDate><atom:link href="https://blog.zenqy.tk/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Dec 2020 11:31:05 +0800</lastBuildDate><atom:link href="https://blog.zenqy.tk/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vps一键脚本收集</title>
+      <link>https://blog.zenqy.tk/post/2020/12/vps%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/</link>
+      <pubDate>Sat, 05 Dec 2020 11:31:05 +0800</pubDate>
+      
+      <guid>https://blog.zenqy.tk/post/2020/12/vps%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/</guid>
+      <description>前言 一般只适用于 Debian、Ubuntu、Contos、Redhat等主流服务器发行版 BBR 手动开启，无效脚本 1 2 3 4 echo &amp;#34;net.core.default_qdisc=fq&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf echo &amp;#34;net.ipv4.tcp_congestion_control=bbr&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf sysctl -p lsmod |</description>
+    </item>
+    
     <item>
       <title>现有系统安装ArchLinux</title>
       <link>https://blog.zenqy.tk/post/2020/12/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinux/</link>

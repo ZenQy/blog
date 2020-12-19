@@ -49,7 +49,7 @@
 <meta itemprop="description" content="前言 本人对比较喜欢ArchLinux，使用的vps基本对会使用vps2arch脚本，将系统变更为ArchLinux。今天从OracleClo">
 <meta itemprop="datePublished" content="2020-12-04T19:29:32+08:00" />
 <meta itemprop="dateModified" content="2020-12-04T19:29:32+08:00" />
-<meta itemprop="wordCount" content="897">
+<meta itemprop="wordCount" content="940">
 
 
 
@@ -120,7 +120,7 @@
       <div class="post-meta">
         <span class="post-time"> 2020-12-04 </span>
         
-          <span class="more-meta"> 约 897 字 </span>
+          <span class="more-meta"> 约 940 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -210,11 +210,11 @@ tar xzf archlinux-bootstrap-*-x86_64.tar.gz
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">echo http://mirrors.cat.net/archlinux/$repo/os/$arch&#39; &gt; root.x86_64/etc/pacman.d/mirrorlist
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">echo &#39;Server = http://mirrors.cat.net/archlinux/$repo/os/$arch&#39; &gt; root.x86_64/etc/pacman.d/mirrorlist
 </code></pre></td></tr></table>
 </div>
 </div><ul>
-<li>chroot</li>
+<li>chroot (这一步操作时会报错，但实际已成功chroot)</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -297,7 +297,7 @@ rm -rf boot/*
 <pre class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">pacstrap /mnt base base-devel linux linux-firmware nano neofetch
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pacstrap /mnt base base-devel linux openssh nano neofetch
 </code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -310,6 +310,17 @@ rm -rf boot/*
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>拷贝resolv.conf</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">cp /etc/resolv.conf /mnt/etc/
 </code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -503,7 +514,11 @@ EOF
           <a href="/tags/vps/">vps</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/2020/12/vps%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Vps一键脚本收集</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         <a class="next" href="/post/2020/10/my-android-app-list/">
             <span class="next-text nav-default">My Android App List</span>
             <span class="next-text nav-mobile">下一篇</span>
