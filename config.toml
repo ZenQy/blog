@@ -141,7 +141,7 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     owner = ""              # Your GitHub ID
     repo = ""               # The repo to store comments
 
-  [params.gitalk]           # Gitalk is a comment system based on GitHub issues. see https://github.com/gitalk/gitalk
+  [params.gitalk]           # Gitalk is a comment system based on GitHub issues. see https://github.ccd thuom/gitalk/gitalk
     owner = "zenqy"              # Your GitHub ID
     repo = "blog"               # The repo to store comments
     clientId = "8cef975f233522795b25"           # Your client ID
