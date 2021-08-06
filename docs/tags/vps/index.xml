@@ -6,7 +6,16 @@
     <description>Recent content in vps on ZenQy&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 05 Dec 2020 11:31:05 +0800</lastBuildDate><atom:link href="https://blog.zenqy.tk/tags/vps/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Aug 2021 18:29:32 +0800</lastBuildDate><atom:link href="https://blog.zenqy.tk/tags/vps/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>现有系统安装ArchLinux（ARM篇）</title>
+      <link>https://blog.zenqy.tk/post/2021/08/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinuxarm%E7%AF%87/</link>
+      <pubDate>Fri, 06 Aug 2021 18:29:32 +0800</pubDate>
+      
+      <guid>https://blog.zenqy.tk/post/2021/08/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinuxarm%E7%AF%87/</guid>
+      <description>前言 之前写过现有系统安装ArchLinux，针对的是x86架构，后来甲骨文推出了arm架构的vps,虽然也重新安装了ArchLinuxARM</description>
+    </item>
+    
     <item>
       <title>Vps一键脚本收集</title>
       <link>https://blog.zenqy.tk/post/2020/12/vps%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/</link>

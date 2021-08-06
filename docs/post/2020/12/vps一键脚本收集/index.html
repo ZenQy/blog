@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.85.0 with theme even" />
+<meta name="generator" content="Hugo 0.87.0 with theme even" />
 
 
 <link rel="canonical" href="https://blog.zenqy.tk/post/2020/12/vps%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/" />
@@ -155,13 +155,13 @@
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf
 echo &#34;net.ipv4.tcp_congestion_control=bbr&#34; &gt;&gt; /etc/sysctl.conf
 sysctl -p
 lsmod | grep bbr
@@ -172,12 +172,12 @@ lsmod | grep bbr
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">wget -N --no-check-certificate https://raw.githubusercontent.com/ylx2016/Linux-NetSpeed/master/tcp.sh
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">wget -N --no-check-certificate https://raw.githubusercontent.com/ylx2016/Linux-NetSpeed/master/tcp.sh
 chmod +x tcp.sh
 ./tcp.sh
 </code></pre></td></tr></table>
@@ -185,12 +185,12 @@ chmod +x tcp.sh
 </div><h2 id="v2ray">v2ray</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">wget -N --no-check-certificate -q -O v2ray.sh https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install.sh
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">wget -N --no-check-certificate -q -O v2ray.sh https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install.sh
 chmod +x v2ray.sh
 ./v2ray.sh
 </code></pre></td></tr></table>
@@ -201,13 +201,13 @@ chmod +x v2ray.sh
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">wget https://raw.githubusercontent.com/CokeMine/ServerStatus-Hotaru/master/status.sh
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">wget https://raw.githubusercontent.com/CokeMine/ServerStatus-Hotaru/master/status.sh
 chmod +x status.sh
 ./status.sh s   # 服务端
 ./status.sh c   # 客户端
@@ -218,12 +218,12 @@ chmod +x status.sh
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -o nezha.sh
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -o nezha.sh
 chmod +x nezha.sh
 ./nezha.sh
 </code></pre></td></tr></table>
@@ -231,10 +231,10 @@ chmod +x nezha.sh
 </div><h2 id="bench">bench</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">wget http://vpstest.cn/it &amp;&amp; bash it
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">wget http://vpstest.cn/it &amp;&amp; bash it
 </code></pre></td></tr></table>
 </div>
 </div>
@@ -263,7 +263,11 @@ chmod +x nezha.sh
           <a href="/tags/vps/">vps</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/2021/08/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinuxarm%E7%AF%87/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">现有系统安装ArchLinux（ARM篇）</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         <a class="next" href="/post/2020/12/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinux/">
             <span class="next-text nav-default">现有系统安装ArchLinux</span>
             <span class="next-text nav-mobile">下一篇</span>

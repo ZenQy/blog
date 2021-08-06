@@ -80,17 +80,13 @@ mount /dev/sda15 /mnt/boot
 
 因为是在原系统上安装`AchLinux`，所以要删除原系统中的文件，但全删除后系统异常，无法继续安装，所以需保留必要文件。以下目录需保留，其余文件可全部删除。
 
-| 目录                | 说明                             |
+| 目录/文件            | 说明                             |
 | ------------------- | -------------------------------- |
 | boot                | 保留目录即可，内部文件可全部删除 |
 | tmp                 | bootstrap正在使用，不可删除      |
 | dev、proc、run、sys |                                  |
+| etc/{resolv.conf,fstab}          |                 |
 
-```
-cd /mnt
-ls | grep -vE 'boot|tmp|dev|proc|run|sys' | xargs rm -rf
-rm -rf boot/*
-```
 
 - 安装基础系统
 
@@ -98,18 +94,6 @@ rm -rf boot/*
 pacstrap /mnt base base-devel linux openssh nano neofetch
 ```
 
-- 创建fstab
-
-创建后需进行检查，务必确保正确。
-
-```
-genfstab -U /mnt >> /mnt/etc/fstab
-```
-- 拷贝resolv.conf
-
-```
-cp /etc/resolv.conf /mnt/etc/
-```
 - chroot，进入目标系统
   
 ```
@@ -192,7 +176,7 @@ cat << EOF > /boot/loader/entries/arch.conf
 title   Arch Linux
 linux   /vmlinuz-linux
 initrd  /initramfs-linux.img
-options root="UUID=206a406e-5432-46e5-82b5-66bed63992ba"  rw
+options root="LABEL=cloudimg-rootfs"  rw
 EOF
 ```
 

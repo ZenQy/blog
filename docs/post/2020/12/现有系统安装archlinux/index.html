@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.85.0 with theme even" />
+<meta name="generator" content="Hugo 0.87.0 with theme even" />
 
 
 <link rel="canonical" href="https://blog.zenqy.tk/post/2020/12/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinux/" />
@@ -49,7 +49,7 @@
 <meta itemprop="name" content="现有系统安装ArchLinux">
 <meta itemprop="description" content="前言 本人对比较喜欢ArchLinux，使用的vps基本对会使用vps2arch脚本，将系统变更为ArchLinux。今天从OracleClo"><meta itemprop="datePublished" content="2020-12-04T19:29:32+08:00" />
 <meta itemprop="dateModified" content="2020-12-04T19:29:32+08:00" />
-<meta itemprop="wordCount" content="940">
+<meta itemprop="wordCount" content="881">
 <meta itemprop="keywords" content="ArchLinux,vps," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="现有系统安装ArchLinux"/>
 <meta name="twitter:description" content="前言 本人对比较喜欢ArchLinux，使用的vps基本对会使用vps2arch脚本，将系统变更为ArchLinux。今天从OracleClo"/>
@@ -126,7 +126,7 @@
       <div class="post-meta">
         <span class="post-time"> 2020-12-04 </span>
         
-          <span class="more-meta"> 约 940 字 </span>
+          <span class="more-meta"> 约 881 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -160,12 +160,12 @@
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">/dev/sda1: LABEL=&#34;cloudimg-rootfs&#34; UUID=&#34;206a406e-5432-46e5-82b5-66bed63992ba&#34; BLOCK_SIZE=&#34;4096&#34; TYPE=&#34;ext4&#34; PARTUUID=&#34;0b4f381f-b07c-435c-8947-0d6e545b4518&#34;
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">/dev/sda1: LABEL=&#34;cloudimg-rootfs&#34; UUID=&#34;206a406e-5432-46e5-82b5-66bed63992ba&#34; BLOCK_SIZE=&#34;4096&#34; TYPE=&#34;ext4&#34; PARTUUID=&#34;0b4f381f-b07c-435c-8947-0d6e545b4518&#34;
 /dev/sda14: PARTUUID=&#34;ea7c39ab-f4de-475b-b996-0617a04d4705&#34;
 /dev/sda15: LABEL_FATBOOT=&#34;UEFI&#34; LABEL=&#34;UEFI&#34; UUID=&#34;0100-A4A7&#34; BLOCK_SIZE=&#34;512&#34; TYPE=&#34;vfat&#34; PARTUUID=&#34;1307abb3-75dd-4990-82f8-48bb2d69c5da&#34;
 </code></pre></td></tr></table>
@@ -178,14 +178,14 @@
 </blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 sda       8:0    0 46.6G  0 disk 
 |-sda1    8:1    0 46.5G  0 part /
 |-sda14   8:14   0    4M  0 part 
@@ -198,12 +198,12 @@ sda       8:0    0 46.6G  0 disk
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">cd /tmp
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cd /tmp
 wget http://mirrors.cat.net/archlinux/iso/latest/archlinux-bootstrap-2020.12.01-x86_64.tar.gz
 tar xzf archlinux-bootstrap-*-x86_64.tar.gz
 </code></pre></td></tr></table>
@@ -213,10 +213,10 @@ tar xzf archlinux-bootstrap-*-x86_64.tar.gz
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">echo &#39;Server = http://mirrors.cat.net/archlinux/$repo/os/$arch&#39; &gt; root.x86_64/etc/pacman.d/mirrorlist
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">echo &#39;Server = http://mirrors.cat.net/archlinux/$repo/os/$arch&#39; &gt; root.x86_64/etc/pacman.d/mirrorlist
 </code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -224,10 +224,10 @@ tar xzf archlinux-bootstrap-*-x86_64.tar.gz
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">/tmp/root.x86_64/bin/arch-chroot /tmp/root.x86_64/
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">/tmp/root.x86_64/bin/arch-chroot /tmp/root.x86_64/
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="使用chroot环境安装系统">使用chroot环境安装系统</h2>
@@ -236,11 +236,11 @@ tar xzf archlinux-bootstrap-*-x86_64.tar.gz
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">pacman-key --init
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">pacman-key --init
 pacman-key --populate archlinux
 </code></pre></td></tr></table>
 </div>
@@ -249,11 +249,11 @@ pacman-key --populate archlinux
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">mount /dev/sda1 /mnt
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">mount /dev/sda1 /mnt
 mount /dev/sda15 /mnt/boot
 </code></pre></td></tr></table>
 </div>
@@ -264,7 +264,7 @@ mount /dev/sda15 /mnt/boot
 <table>
 <thead>
 <tr>
-<th>目录</th>
+<th>目录/文件</th>
 <th>说明</th>
 </tr>
 </thead>
@@ -281,52 +281,21 @@ mount /dev/sda15 /mnt/boot
 <td>dev、proc、run、sys</td>
 <td></td>
 </tr>
+<tr>
+<td>etc/{resolv.conf,fstab}</td>
+<td></td>
+</tr>
 </tbody>
 </table>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">cd /mnt
-ls | grep -vE &#39;boot|tmp|dev|proc|run|sys&#39; | xargs rm -rf
-rm -rf boot/*
-</code></pre></td></tr></table>
-</div>
-</div><ul>
+<ul>
 <li>安装基础系统</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">pacstrap /mnt base base-devel linux openssh nano neofetch
-</code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>创建fstab</li>
-</ul>
-<p>创建后需进行检查，务必确保正确。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
-</code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>拷贝resolv.conf</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">cp /etc/resolv.conf /mnt/etc/
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">pacstrap /mnt base base-devel linux openssh nano neofetch
 </code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -334,10 +303,10 @@ rm -rf boot/*
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">arch-chroot /mnt
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">arch-chroot /mnt
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="完善系统">完善系统</h2>
@@ -346,11 +315,11 @@ rm -rf boot/*
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 hwclock --systohc
 </code></pre></td></tr></table>
 </div>
@@ -359,12 +328,12 @@ hwclock --systohc
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">echo &#39;en_US.UTF-8 UTF-8&#39; &gt; /etc/locale.gen
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">echo &#39;en_US.UTF-8 UTF-8&#39; &gt; /etc/locale.gen
 locale-gen
 echo &#39;LANG=en_US.UTF-8&#39; &gt; /etc/locale.conf
 </code></pre></td></tr></table>
@@ -374,7 +343,7 @@ echo &#39;LANG=en_US.UTF-8&#39; &gt; /etc/locale.conf
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -392,7 +361,7 @@ echo &#39;LANG=en_US.UTF-8&#39; &gt; /etc/locale.conf
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">echo &#39;oraclecloud&#39; &gt; /etc/hostname
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">echo &#39;oraclecloud&#39; &gt; /etc/hostname
 
 cat &lt;&lt; EOF &gt; /etc/hosts
 127.0.0.1   localhost
@@ -416,12 +385,12 @@ systemctl enable systemd-networkd
 <p>在 /etc/ssh/sshd_config 变更以下设置</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">PermitRootLogin yes
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">PermitRootLogin yes
 ClientAliveInterval 60
 ClientAliveCountMax 360
 </code></pre></td></tr></table>
@@ -430,10 +399,10 @@ ClientAliveCountMax 360
 <p>自启动sshd</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">systemctl enable sshd
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">systemctl enable sshd
 </code></pre></td></tr></table>
 </div>
 </div><ul>
@@ -442,16 +411,16 @@ ClientAliveCountMax 360
 <p>本人喜欢 systemd-boot ，所以使用它作为启动引导。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">bootctl install
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">bootctl install
 </code></pre></td></tr></table>
 </div>
 </div><p>配置 loader.conf 和 arch.conf 文件</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -465,7 +434,7 @@ ClientAliveCountMax 360
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">cat &lt;&lt; EOF &gt; /boot/loader/loader.conf
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cat &lt;&lt; EOF &gt; /boot/loader/loader.conf
 timeout       2
 default       arch
 console-mode  auto
@@ -475,7 +444,7 @@ cat &lt;&lt; EOF &gt; /boot/loader/entries/arch.conf
 title   Arch Linux
 linux   /vmlinuz-linux
 initrd  /initramfs-linux.img
-options root=&#34;UUID=206a406e-5432-46e5-82b5-66bed63992ba&#34;  rw
+options root=&#34;LABEL=cloudimg-rootfs&#34;  rw
 EOF
 </code></pre></td></tr></table>
 </div>
@@ -484,10 +453,10 @@ EOF
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">passwd
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">passwd
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="进入新系统">进入新系统</h2>
