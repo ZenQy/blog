@@ -20,10 +20,10 @@ toc: true
 
 ## 进入Recovery
 
-机顶盒完全断电，通电后立即不停按遥控器菜单键+音量减键，即可进入Recovery模式。
+机顶盒完全断电，通电后立即不停交替按遥控器菜单键和音量减键，即可进入Recovery模式。
 
 {{% admonition type="note" title="补充说明" details="true" %}}
-在自带系统中，插入装有update.zip的U盘操作成功，刷机后尝试这种方式2次均失败。
+条件苛刻，可能需尝试多次才能成功。
 {{% /admonition %}}
 
 ## 连接设备
