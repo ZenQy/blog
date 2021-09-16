@@ -82,7 +82,7 @@ sh <(curl -L https://github.com/numtide/nix-unstable-installer/releases/download
 nix-env -f '<nixpkgs>' -iA nixos-install-tools
 ```
 
-创建配置文件，配置文件默认安装在`/mnt/etc/nixos`（可选）
+创建配置文件，配置文件默认安装在`/mnt/etc/nixos`（可选,注意：此处UUID错误，需要修改）
 
 ```bash
 sudo `which nixos-generate-config` --root /mnt
