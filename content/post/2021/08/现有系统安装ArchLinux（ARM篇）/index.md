@@ -36,7 +36,7 @@ mount -t proc /proc proc
 mount --make-rslave --rbind /sys sys
 mount --make-rslave --rbind /dev dev
 mount --make-rslave --rbind /run run
-chroot /stable-chroot /bin/bash
+chroot ./ /bin/bash
 ```
 
 ## 使用chroot环境安装系统
