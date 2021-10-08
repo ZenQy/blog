@@ -8,7 +8,7 @@ tags:
 toc: true
 ---
 
-## 前言
+## 前言b
 
 最近改用`nixos`，当然系统vps也能安装相同的系统。`virmach`家可通过`netboot,xyz`安装，比较方便。但手上有一台vps,商家只支持`debian`和`centos`，只能自己想办法安装。
 
@@ -94,9 +94,7 @@ sudo `which nixos-generate-config` --root /mnt
 git clone https://github.com/ZenQy/nixos.git
 cd nixos
 cp /mnt/etc/nixos/hardware-configuration.nix machines/nbhost/hardware.nix
-nano machines/profile.nix
-git add -f machines/profile.nix
-sudo PATH="$PATH" NIX_PATH="$NIX_PATH" `which nixos-install` --root /mnt --flake .#nbhost
+sudo PATH="$PATH" `which nixos-install` --root /mnt --flake .#nbhost
 ```
 
 重启即可进入新系统，重启前可以考虑把配置文件转移到新系统中。
