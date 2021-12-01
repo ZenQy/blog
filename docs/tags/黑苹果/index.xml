@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>黑苹果 on ZenQy&#39;s Blog</title>
-    <link>https://blog.zenqy.tk/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/</link>
+    <link>https://blog.940940.xyz/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/</link>
     <description>Recent content in 黑苹果 on ZenQy&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 22 Dec 2019 21:28:03 +0800</lastBuildDate><atom:link href="https://blog.zenqy.tk/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 22 Dec 2019 21:28:03 +0800</lastBuildDate><atom:link href="https://blog.940940.xyz/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>黑苹果安装记录</title>
-      <link>https://blog.zenqy.tk/post/2019/12/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</link>
+      <link>https://blog.940940.xyz/post/2019/12/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Sun, 22 Dec 2019 21:28:03 +0800</pubDate>
       
-      <guid>https://blog.zenqy.tk/post/2019/12/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://blog.940940.xyz/post/2019/12/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</guid>
       <description>电脑主要配置 硬件 型号 备注 CPU E3-1231 v3 3.4G Hz 主板 华硕 B85M-G plus 显卡 Nvidia GTX 960 微星 声卡 realtek ALC887 网卡 realtek RTL8168/8111/8112 安装过程 下载镜像 受N卡驱动限制，最高只能安装10.13.6版本的</description>
     </item>
     

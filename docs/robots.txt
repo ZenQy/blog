@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://blog.zenqy.tk/sitemap.xml
+Sitemap: https://blog.940940.xyz/sitemap.xml

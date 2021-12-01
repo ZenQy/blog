@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="ZenQy" /><meta name="description" content="前言 一般只适用于 Debian、Ubuntu、Contos、Redhat等主流服务器发行版 BBR 手动开启，无效脚本 1 2 3 4 echo &amp;#34;net.core.default_qdisc=fq&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf echo &amp;#34;net.ipv4.tcp_congestion_control=bbr&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf sysctl -p lsmod |" /><meta name="keywords" content="Hugo, golang" />
+<meta name="author" content="ZenQy" /><meta name="description" content="前言 一般只适用于 Debian、Ubuntu、Contos、Redhat等主流服务器发行版 BBR 手动开启，无需脚本 1 2 3 4 echo &amp;#34;net.core.default_qdisc=fq&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf echo &amp;#34;net.ipv4.tcp_congestion_control=bbr&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf sysctl -p lsmod |" /><meta name="keywords" content="Hugo, golang" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.88.1 with theme even" />
 
 
-<link rel="canonical" href="https://blog.zenqy.tk/post/2020/12/vps%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/" />
+<link rel="canonical" href="https://blog.940940.xyz/post/2020/12/vps%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -40,19 +40,19 @@
 
 
 <meta property="og:title" content="Vps一键脚本收集" />
-<meta property="og:description" content="前言 一般只适用于 Debian、Ubuntu、Contos、Redhat等主流服务器发行版 BBR 手动开启，无效脚本 1 2 3 4 echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf echo &#34;net.ipv4.tcp_congestion_control=bbr&#34; &gt;&gt; /etc/sysctl.conf sysctl -p lsmod |" />
+<meta property="og:description" content="前言 一般只适用于 Debian、Ubuntu、Contos、Redhat等主流服务器发行版 BBR 手动开启，无需脚本 1 2 3 4 echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf echo &#34;net.ipv4.tcp_congestion_control=bbr&#34; &gt;&gt; /etc/sysctl.conf sysctl -p lsmod |" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog.zenqy.tk/post/2020/12/vps%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://blog.940940.xyz/post/2020/12/vps%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2020-12-05T11:31:05+08:00" />
 <meta property="article:modified_time" content="2020-12-05T11:31:05+08:00" />
 
 <meta itemprop="name" content="Vps一键脚本收集">
-<meta itemprop="description" content="前言 一般只适用于 Debian、Ubuntu、Contos、Redhat等主流服务器发行版 BBR 手动开启，无效脚本 1 2 3 4 echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf echo &#34;net.ipv4.tcp_congestion_control=bbr&#34; &gt;&gt; /etc/sysctl.conf sysctl -p lsmod |"><meta itemprop="datePublished" content="2020-12-05T11:31:05+08:00" />
+<meta itemprop="description" content="前言 一般只适用于 Debian、Ubuntu、Contos、Redhat等主流服务器发行版 BBR 手动开启，无需脚本 1 2 3 4 echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf echo &#34;net.ipv4.tcp_congestion_control=bbr&#34; &gt;&gt; /etc/sysctl.conf sysctl -p lsmod |"><meta itemprop="datePublished" content="2020-12-05T11:31:05+08:00" />
 <meta itemprop="dateModified" content="2020-12-05T11:31:05+08:00" />
-<meta itemprop="wordCount" content="150">
+<meta itemprop="wordCount" content="300">
 <meta itemprop="keywords" content="vps," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vps一键脚本收集"/>
-<meta name="twitter:description" content="前言 一般只适用于 Debian、Ubuntu、Contos、Redhat等主流服务器发行版 BBR 手动开启，无效脚本 1 2 3 4 echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf echo &#34;net.ipv4.tcp_congestion_control=bbr&#34; &gt;&gt; /etc/sysctl.conf sysctl -p lsmod |"/>
+<meta name="twitter:description" content="前言 一般只适用于 Debian、Ubuntu、Contos、Redhat等主流服务器发行版 BBR 手动开启，无需脚本 1 2 3 4 echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf echo &#34;net.ipv4.tcp_congestion_control=bbr&#34; &gt;&gt; /etc/sysctl.conf sysctl -p lsmod |"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -126,7 +126,7 @@
       <div class="post-meta">
         <span class="post-time"> 2020-12-05 </span>
         
-          <span class="more-meta"> 约 150 字 </span>
+          <span class="more-meta"> 约 300 字 </span>
           <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -141,7 +141,8 @@
     <li><a href="#bbr">BBR</a></li>
     <li><a href="#v2ray">v2ray</a></li>
     <li><a href="#探针">探针</a></li>
-    <li><a href="#bench">bench</a></li>
+    <li><a href="#测试脚本">测试脚本</a></li>
+    <li><a href="#dd脚本">DD脚本</a></li>
   </ul>
 </nav>
   </div>
@@ -151,7 +152,7 @@
 <p>一般只适用于 Debian、Ubuntu、Contos、Redhat等主流服务器发行版</p>
 <h2 id="bbr">BBR</h2>
 <ul>
-<li>手动开启，无效脚本</li>
+<li>手动开启，无需脚本</li>
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -228,16 +229,116 @@ chmod +x nezha.sh
 ./nezha.sh
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="bench">bench</h2>
+</div><h2 id="测试脚本">测试脚本</h2>
+<ul>
+<li>Bench.sh</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">wget http://vpstest.cn/it &amp;&amp; bash it
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">wget -qO- bench.sh | bash
 </code></pre></td></tr></table>
 </div>
+</div><ul>
+<li>wget -qO- bench.sh | bash</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">wget -qO- --no-check-certificate https://raw.githubusercontent.com/oooldking/script/master/superbench.sh | bash
+</code></pre></td></tr></table>
 </div>
+</div><ul>
+<li>Yet-Another-Bench-Script</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">curl -sL yabs.sh | bash
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>合集</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">wget -N --no-check-certificate https://raw.githubusercontent.com/veip007/hj/master/hj.sh
+chmod +x hj.sh
+./hj.sh
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="dd脚本">DD脚本</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">bash &lt;(wget --no-check-certificate -qO- &#39;https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh&#39;) -d 11 -v 64 -p &#34;自定义root密码&#34; -port &#34;自定义ssh端口&#34;
+</code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:center">例子</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-d</td>
+<td style="text-align:center">9,10,11</td>
+<td style="text-align:center">Debian</td>
+</tr>
+<tr>
+<td style="text-align:center">-u</td>
+<td style="text-align:center">18.04,20.04</td>
+<td style="text-align:center">Ubuntu</td>
+</tr>
+<tr>
+<td style="text-align:center">-c</td>
+<td style="text-align:center">6.9</td>
+<td style="text-align:center">CentOS</td>
+</tr>
+<tr>
+<td style="text-align:center">-v</td>
+<td style="text-align:center">32,64</td>
+<td style="text-align:center">arch</td>
+</tr>
+<tr>
+<td style="text-align:center">-p</td>
+<td style="text-align:center">QWERqwer</td>
+<td style="text-align:center">password,默认MoeClub.org</td>
+</tr>
+<tr>
+<td style="text-align:center">-port</td>
+<td style="text-align:center">1234</td>
+<td style="text-align:center">ssh port,默认22</td>
+</tr>
+<tr>
+<td style="text-align:center">&ndash;mirror</td>
+<td style="text-align:center"><a href="http://mirrors.ustc.edu.cn/debian">http://mirrors.ustc.edu.cn/debian</a></td>
+<td style="text-align:center">mirror</td>
+</tr>
+<tr>
+<td style="text-align:center">-dd</td>
+<td style="text-align:center"><a href="http://d.nat.ee/win/lite/wes7-x86-cn-lite/wes7-x86-cn-lite.vhd.gz">http://d.nat.ee/win/lite/wes7-x86-cn-lite/wes7-x86-cn-lite.vhd.gz</a></td>
+<td style="text-align:center">win uri</td>
+</tr>
+</tbody>
+</table>
+
     </div>
 
     <div class="post-copyright">
@@ -306,7 +407,7 @@ chmod +x nezha.sh
       <div class="social-links">
       <a href="mailto:zenqy.qin@gmail.com" class="iconfont icon-email" title="email"></a>
       <a href="https://github.com/ZenQy" class="iconfont icon-github" title="github"></a>
-  <a href="https://blog.zenqy.tk/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  <a href="https://blog.940940.xyz/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
 <div class="copyright">

@@ -13,7 +13,7 @@ toc: true
 
 ## BBR
 
-- 手动开启，无效脚本
+- 手动开启，无需脚本
 
 ```
 echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
@@ -57,8 +57,45 @@ chmod +x nezha.sh
 ./nezha.sh
 ```
 
-## bench
+## 测试脚本
+
+- Bench.sh
 
 ```
-wget http://vpstest.cn/it && bash it
+wget -qO- bench.sh | bash
 ```
+
+- wget -qO- bench.sh | bash
+
+```
+wget -qO- --no-check-certificate https://raw.githubusercontent.com/oooldking/script/master/superbench.sh | bash
+```
+
+- Yet-Another-Bench-Script
+
+```
+curl -sL yabs.sh | bash
+```
+
+- 合集
+
+```
+wget -N --no-check-certificate https://raw.githubusercontent.com/veip007/hj/master/hj.sh
+chmod +x hj.sh
+./hj.sh
+```
+## DD脚本
+
+```
+bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh') -d 11 -v 64 -p "自定义root密码" -port "自定义ssh端口"
+```
+参数|例子|说明
+:--:|:--:|:--:
+-d|9,10,11|Debian
+-u|18.04,20.04|Ubuntu
+-c|6.9|CentOS
+-v|32,64|arch
+-p|QWERqwer|password,默认MoeClub.org
+-port|1234|ssh port,默认22
+--mirror|http://mirrors.ustc.edu.cn/debian|mirror
+-dd|http://d.nat.ee/win/lite/wes7-x86-cn-lite/wes7-x86-cn-lite.vhd.gz|win uri
