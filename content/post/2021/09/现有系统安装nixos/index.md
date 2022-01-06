@@ -8,9 +8,9 @@ tags:
 toc: true
 ---
 
-## 前言b
+## 前言
 
-最近改用`nixos`，当然系统vps也能安装相同的系统。`virmach`家可通过`netboot,xyz`安装，比较方便。但手上有一台vps,商家只支持`debian`和`centos`，只能自己想办法安装。
+最近改用`nixos`，当然希望vps也能安装相同的系统。`virmach`家可通过`netboot,xyz`安装，比较方便。但手上有一台vps,商家只支持`debian`和`centos`，只能自己想办法安装。
 
 ## 内存安装最小化系统
 
@@ -69,10 +69,10 @@ cd ~
 
 ## 安装`nix`工具和新系统
 
-此处使用[nix-unstable-installer](https://github.com/numtide/nix-unstable-installer)方案。
+~~此处使用[nix-unstable-installer](https://github.com/numtide/nix-unstable-installer)方案。~~官方稳定版已经支持`nix flake`。
 
 ```bash
-sh <(curl -L https://github.com/numtide/nix-unstable-installer/releases/download/nix-2.4pre20210823_af94b54/install)
+curl -L https://nixos.org/nix/install | sh
 . $HOME/.nix-profile/etc/profile.d/nix.sh
 ```
 
