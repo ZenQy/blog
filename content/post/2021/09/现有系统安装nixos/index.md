@@ -69,11 +69,19 @@ cd ~
 
 ## 安装`nix`工具和新系统
 
-~~此处使用[nix-unstable-installer](https://github.com/numtide/nix-unstable-installer)方案。~~官方稳定版已经支持`nix flake`。
+~~此处使用[nix-unstable-installer](https://github.com/numtide/nix-unstable-installer)方案。~~
+
+官方稳定版已经支持`nix flake`。
 
 ```bash
 curl -L https://nixos.org/nix/install | sh
 . $HOME/.nix-profile/etc/profile.d/nix.sh
+```
+
+更新channel
+
+```
+nix-channel --update
 ```
 
 安装`nixos-install-tools`
@@ -91,7 +99,7 @@ sudo `which nixos-generate-config` --root /mnt
 因为我已经提前准备好配置，所以不需要上一步，或者仅需要上一步产生的`hardware-configuration.nix`。下载配置文件，添加缺失的`profile.nix`，修改后进行安装。
 
 ```bash
-git clone https://github.com/ZenQy/nixos.git
+git clone git@github.com:ZenQy/nixos.git
 cd nixos
 cp /mnt/etc/nixos/hardware-configuration.nix machines/nbhost/hardware.nix
 sudo PATH="$PATH" `which nixos-install` --root /mnt --flake .#nbhost

@@ -49,7 +49,7 @@
 <meta itemprop="name" content="现有系统安装nixos">
 <meta itemprop="description" content="前言 最近改用nixos，当然希望vps也能安装相同的系统。virmach家可通过netboot,xyz安装，比较方便。但手上有一台vps,商"><meta itemprop="datePublished" content="2021-09-16T18:02:28+08:00" />
 <meta itemprop="dateModified" content="2021-09-16T18:02:28+08:00" />
-<meta itemprop="wordCount" content="675">
+<meta itemprop="wordCount" content="683">
 <meta itemprop="keywords" content="nixos,vps," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="现有系统安装nixos"/>
 <meta name="twitter:description" content="前言 最近改用nixos，当然希望vps也能安装相同的系统。virmach家可通过netboot,xyz安装，比较方便。但手上有一台vps,商"/>
@@ -126,7 +126,7 @@
       <div class="post-meta">
         <span class="post-time"> 2021-09-16 </span>
         
-          <span class="more-meta"> 约 675 字 </span>
+          <span class="more-meta"> 约 683 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -232,7 +232,8 @@ mkdir -p /etc/nix
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="安装nix工具和新系统">安装<code>nix</code>工具和新系统</h2>
-<p>~~此处使用<a href="https://github.com/numtide/nix-unstable-installer">nix-unstable-installer</a>方案。~~官方稳定版已经支持<code>nix flake</code>。</p>
+<p><del>此处使用<a href="https://github.com/numtide/nix-unstable-installer">nix-unstable-installer</a>方案。</del></p>
+<p>官方稳定版已经支持<code>nix flake</code>。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -241,6 +242,15 @@ mkdir -p /etc/nix
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -L https://nixos.org/nix/install <span class="p">|</span> sh
 . <span class="nv">$HOME</span>/.nix-profile/etc/profile.d/nix.sh
+</code></pre></td></tr></table>
+</div>
+</div><p>更新channel</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">nix-channel --update
 </code></pre></td></tr></table>
 </div>
 </div><p>安装<code>nixos-install-tools</code></p>
@@ -270,7 +280,7 @@ mkdir -p /etc/nix
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/ZenQy/nixos.git
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git clone git@github.com:ZenQy/nixos.git
 <span class="nb">cd</span> nixos
 cp /mnt/etc/nixos/hardware-configuration.nix machines/nbhost/hardware.nix
 sudo <span class="nv">PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$PATH</span><span class="s2">&#34;</span> <span class="sb">`</span>which nixos-install<span class="sb">`</span> --root /mnt --flake .#nbhost
