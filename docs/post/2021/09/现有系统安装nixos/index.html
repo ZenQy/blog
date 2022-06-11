@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.99.1 with theme even" />
 
 
 <link rel="canonical" href="https://blog.940940.xyz/post/2021/09/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85nixos/" />
@@ -49,7 +49,7 @@
 <meta itemprop="name" content="现有系统安装nixos">
 <meta itemprop="description" content="前言 最近改用nixos，当然希望vps也能安装相同的系统。virmach家可通过netboot,xyz安装，比较方便。但手上有一台vps,商"><meta itemprop="datePublished" content="2021-09-16T18:02:28+08:00" />
 <meta itemprop="dateModified" content="2021-09-16T18:02:28+08:00" />
-<meta itemprop="wordCount" content="743">
+<meta itemprop="wordCount" content="910">
 <meta itemprop="keywords" content="nixos,vps," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="现有系统安装nixos"/>
 <meta name="twitter:description" content="前言 最近改用nixos，当然希望vps也能安装相同的系统。virmach家可通过netboot,xyz安装，比较方便。但手上有一台vps,商"/>
@@ -126,7 +126,7 @@
       <div class="post-meta">
         <span class="post-time"> 2021-09-16 </span>
         
-          <span class="more-meta"> 约 743 字 </span>
+          <span class="more-meta"> 约 910 字 </span>
           <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -141,6 +141,7 @@
     <li><a href="#内存安装最小化系统">内存安装最小化系统</a></li>
     <li><a href="#准备环境">准备环境</a></li>
     <li><a href="#安装nix工具和新系统">安装<code>nix</code>工具和新系统</a></li>
+    <li><a href="#常见问题">常见问题</a></li>
   </ul>
 </nav>
   </div>
@@ -157,10 +158,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wget https://raw.githubusercontent.com/Jamesits/menhera.sh/master/menhera.sh
-chmod +x menhera.sh
-./menhera.sh
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget https://raw.githubusercontent.com/Jamesits/menhera.sh/master/menhera.sh
+</span></span><span class="line"><span class="cl">chmod +x menhera.sh
+</span></span><span class="line"><span class="cl">./menhera.sh
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>根据提示即可安装成功，然后重启进入新系统。</p>
 <h2 id="准备环境">准备环境</h2>
@@ -174,12 +175,12 @@ chmod +x menhera.sh
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">rm -rf /mnt/oldroot/*
-mkdir /mnt/oldroot/xxx
-mkdir /nix
-mount -o <span class="nb">bind</span> /mnt/oldroot/xxx /nix
-swapon /dev/vda2
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rm -rf /mnt/oldroot/*
+</span></span><span class="line"><span class="cl">mkdir /mnt/oldroot/xxx
+</span></span><span class="line"><span class="cl">mkdir /nix
+</span></span><span class="line"><span class="cl">mount -o <span class="nb">bind</span> /mnt/oldroot/xxx /nix
+</span></span><span class="line"><span class="cl">swapon /dev/vda2
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>安装必要的工具。</p>
 <div class="highlight"><div class="chroma">
@@ -188,9 +189,9 @@ swapon /dev/vda2
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">apt update
-apt install -y wget curl xz-utils sudo git nano
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt update
+</span></span><span class="line"><span class="cl">apt install -y wget curl xz-utils sudo git nano
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>创建相关组和用户</p>
 <div class="highlight"><div class="chroma">
@@ -199,9 +200,9 @@ apt install -y wget curl xz-utils sudo git nano
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">groupadd -g <span class="m">30000</span> nixbld
-useradd -m -u <span class="m">30000</span> -g nixbld -G nixbld -s /bin/bash nixbld
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">groupadd -g <span class="m">30000</span> nixbld
+</span></span><span class="line"><span class="cl">useradd -m -u <span class="m">30000</span> -g nixbld -G nixbld -s /bin/bash nixbld
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>nixbld</code>用户添加<code>sudo</code>权限，并添加<code>nixUnstable</code>配置，同时变更/nix所属</p>
 <div class="highlight"><div class="chroma">
@@ -212,11 +213,11 @@ useradd -m -u <span class="m">30000</span> -g nixbld -G nixbld -s /bin/bash nixb
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">&#34;nixbld  ALL=(ALL) NOPASSWD: ALL&#34;</span> &gt;&gt; /etc/sudoers
-mkdir -p /etc/nix
-<span class="nb">echo</span> <span class="s2">&#34;experimental-features = nix-command flakes&#34;</span> &gt; /etc/nix/nix.conf
-chown -R nixbld /nix
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;nixbld  ALL=(ALL) NOPASSWD: ALL&#34;</span> &gt;&gt; /etc/sudoers
+</span></span><span class="line"><span class="cl">mkdir -p /etc/nix
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;experimental-features = nix-command flakes&#34;</span> &gt; /etc/nix/nix.conf
+</span></span><span class="line"><span class="cl">chown -R nixbld /nix
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>切换至<code>nixbld</code>用户</p>
 <div class="highlight"><div class="chroma">
@@ -225,9 +226,9 @@ chown -R nixbld /nix
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">su nixbld
-<span class="nb">cd</span> ~
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">su nixbld
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="安装nix工具和新系统">安装<code>nix</code>工具和新系统</h2>
 <p><del>此处使用<a href="https://github.com/numtide/nix-unstable-installer">nix-unstable-installer</a>方案。</del></p>
@@ -238,9 +239,9 @@ chown -R nixbld /nix
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">curl -L https://nixos.org/nix/install <span class="p">|</span> sh
-. <span class="nv">$HOME</span>/.nix-profile/etc/profile.d/nix.sh
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -L https://nixos.org/nix/install <span class="p">|</span> sh
+</span></span><span class="line"><span class="cl">. <span class="nv">$HOME</span>/.nix-profile/etc/profile.d/nix.sh
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>更新channel</p>
 <div class="highlight"><div class="chroma">
@@ -248,8 +249,8 @@ chown -R nixbld /nix
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">nix-channel --update
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">nix-channel --update
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>安装<code>nixos-install-tools</code></p>
 <div class="highlight"><div class="chroma">
@@ -257,8 +258,8 @@ chown -R nixbld /nix
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">nix-env -f <span class="s1">&#39;&lt;nixpkgs&gt;&#39;</span> -iA nixos-install-tools
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nix-env -f <span class="s1">&#39;&lt;nixpkgs&gt;&#39;</span> -iA nixos-install-tools
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>创建配置文件，配置文件默认安装在<code>/mnt/etc/nixos</code>（可选,注意：此处UUID错误，需要修改）</p>
 <div class="highlight"><div class="chroma">
@@ -266,8 +267,8 @@ chown -R nixbld /nix
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sudo <span class="sb">`</span>which nixos-generate-config<span class="sb">`</span> --root /mnt/oldroot
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo <span class="sb">`</span>which nixos-generate-config<span class="sb">`</span> --root /mnt/oldroot
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>因为我已经提前准备好配置，所以不需要上一步，或者仅需要上一步产生的<code>hardware-configuration.nix</code>，修改好配置后进行安装。</p>
 <div class="highlight"><div class="chroma">
@@ -278,11 +279,11 @@ chown -R nixbld /nix
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git clone git@github.com:ZenQy/nixos.git
-<span class="nb">cd</span> nixos
-cp /mnt/oldroot/etc/nixos/hardware-configuration.nix host/cc/hardware.nix
-sudo <span class="nv">PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$PATH</span><span class="s2">&#34;</span> <span class="sb">`</span>which nixos-install<span class="sb">`</span> --root /mnt/oldroot --flake .#cc
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone git@github.com:ZenQy/nixos.git
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> nixos
+</span></span><span class="line"><span class="cl">cp /mnt/oldroot/etc/nixos/hardware-configuration.nix host/cc/hardware.nix
+</span></span><span class="line"><span class="cl">sudo <span class="nv">PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$PATH</span><span class="s2">&#34;</span> <span class="sb">`</span>which nixos-install<span class="sb">`</span> --root /mnt/oldroot --flake .#cc
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>如果安装时报错，无需担心，重新切换到nixbld用户，再次安装即可成功。
 重启即可进入新系统，重启前可以考虑把配置文件转移到新系统中,重启后记得删除/xxx文件夹。</p>
@@ -292,11 +293,26 @@ sudo <span class="nv">PATH</span><span class="o">=</span><span class="s2">&#34;<
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> ../
-sudo mv nixos /mnt/root/
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ../
+</span></span><span class="line"><span class="cl">sudo mv nixos /mnt/root/
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img src="2022-03-20_14-32.png" alt="img"></p>
+<h2 id="常见问题">常见问题</h2>
+<ol>
+<li>
+<p>ailed to create file via template ‘/tmp/tmp.XXXXXXXXXX’: No such file or directory
+答：手动创建/tmp文件夹</p>
+</li>
+<li>
+<p>chroot: failed to run command ‘systemd-tmpfiles’: No such file or directory
+答：没找到解决方案，有时不影响，可以成功进入系统，有时却不可以</p>
+</li>
+<li>
+<p>nixos-install 过程中直接killed
+答：系统内存不足，不用官方ubuntu系统，改用debian、arch或nixos就能成功</p>
+</li>
+</ol>
 
     </div>
 
@@ -402,7 +418,7 @@ sudo mv nixos /mnt/root/
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
   <script type="text/javascript">
     window.MathJax = {
       tex: {

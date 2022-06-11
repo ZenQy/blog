@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.99.1 with theme even" />
 
 
 <link rel="canonical" href="https://blog.940940.xyz/post/2020/12/vps%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/" />
@@ -162,11 +162,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf
-echo &#34;net.ipv4.tcp_congestion_control=bbr&#34; &gt;&gt; /etc/sysctl.conf
-sysctl -p
-lsmod | grep bbr
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf
+</span></span><span class="line"><span class="cl">echo &#34;net.ipv4.tcp_congestion_control=bbr&#34; &gt;&gt; /etc/sysctl.conf
+</span></span><span class="line"><span class="cl">sysctl -p
+</span></span><span class="line"><span class="cl">lsmod | grep bbr
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>N合一脚本</li>
@@ -178,10 +178,10 @@ lsmod | grep bbr
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">wget -N --no-check-certificate https://raw.githubusercontent.com/ylx2016/Linux-NetSpeed/master/tcp.sh
-chmod +x tcp.sh
-./tcp.sh
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wget -N --no-check-certificate https://raw.githubusercontent.com/ylx2016/Linux-NetSpeed/master/tcp.sh
+</span></span><span class="line"><span class="cl">chmod +x tcp.sh
+</span></span><span class="line"><span class="cl">./tcp.sh
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="v2ray">v2ray</h2>
 <div class="highlight"><div class="chroma">
@@ -191,10 +191,10 @@ chmod +x tcp.sh
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">wget -N --no-check-certificate -q -O v2ray.sh https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install.sh
-chmod +x v2ray.sh
-./v2ray.sh
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wget -N --no-check-certificate -q -O v2ray.sh https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install.sh
+</span></span><span class="line"><span class="cl">chmod +x v2ray.sh
+</span></span><span class="line"><span class="cl">./v2ray.sh
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="探针">探针</h2>
 <ul>
@@ -208,11 +208,11 @@ chmod +x v2ray.sh
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">wget https://raw.githubusercontent.com/CokeMine/ServerStatus-Hotaru/master/status.sh
-chmod +x status.sh
-./status.sh s   # 服务端
-./status.sh c   # 客户端
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wget https://raw.githubusercontent.com/CokeMine/ServerStatus-Hotaru/master/status.sh
+</span></span><span class="line"><span class="cl">chmod +x status.sh
+</span></span><span class="line"><span class="cl">./status.sh s   # 服务端
+</span></span><span class="line"><span class="cl">./status.sh c   # 客户端
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>哪吒面板</li>
@@ -224,10 +224,10 @@ chmod +x status.sh
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -o nezha.sh
-chmod +x nezha.sh
-./nezha.sh
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -o nezha.sh
+</span></span><span class="line"><span class="cl">chmod +x nezha.sh
+</span></span><span class="line"><span class="cl">./nezha.sh
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="测试脚本">测试脚本</h2>
 <ul>
@@ -238,8 +238,8 @@ chmod +x nezha.sh
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">wget -qO- bench.sh | bash
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wget -qO- bench.sh | bash
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>wget -qO- bench.sh | bash</li>
@@ -249,8 +249,8 @@ chmod +x nezha.sh
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">wget -qO- --no-check-certificate https://raw.githubusercontent.com/oooldking/script/master/superbench.sh | bash
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wget -qO- --no-check-certificate https://raw.githubusercontent.com/oooldking/script/master/superbench.sh | bash
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>Yet-Another-Bench-Script</li>
@@ -260,8 +260,8 @@ chmod +x nezha.sh
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">curl -sL yabs.sh | bash
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">curl -sL yabs.sh | bash
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>合集</li>
@@ -273,10 +273,10 @@ chmod +x nezha.sh
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">wget -N --no-check-certificate https://raw.githubusercontent.com/veip007/hj/master/hj.sh
-chmod +x hj.sh
-./hj.sh
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">wget -N --no-check-certificate https://raw.githubusercontent.com/veip007/hj/master/hj.sh
+</span></span><span class="line"><span class="cl">chmod +x hj.sh
+</span></span><span class="line"><span class="cl">./hj.sh
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="dd脚本">DD脚本</h2>
 <div class="highlight"><div class="chroma">
@@ -284,8 +284,8 @@ chmod +x hj.sh
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">bash &lt;(wget --no-check-certificate -qO- &#39;https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh&#39;) -d 11 -v 64 -p &#34;自定义root密码&#34; -port &#34;自定义ssh端口&#34;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">bash &lt;(wget --no-check-certificate -qO- &#39;https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh&#39;) -d 11 -v 64 -p &#34;自定义root密码&#34; -port &#34;自定义ssh端口&#34;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><table>
 <thead>
@@ -446,7 +446,7 @@ chmod +x hj.sh
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
   <script type="text/javascript">
     window.MathJax = {
       tex: {

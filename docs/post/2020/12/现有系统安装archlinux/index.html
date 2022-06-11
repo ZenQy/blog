@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.99.1 with theme even" />
 
 
 <link rel="canonical" href="https://blog.940940.xyz/post/2020/12/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinux/" />
@@ -165,10 +165,10 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">/dev/sda1: LABEL=&#34;cloudimg-rootfs&#34; UUID=&#34;206a406e-5432-46e5-82b5-66bed63992ba&#34; BLOCK_SIZE=&#34;4096&#34; TYPE=&#34;ext4&#34; PARTUUID=&#34;0b4f381f-b07c-435c-8947-0d6e545b4518&#34;
-/dev/sda14: PARTUUID=&#34;ea7c39ab-f4de-475b-b996-0617a04d4705&#34;
-/dev/sda15: LABEL_FATBOOT=&#34;UEFI&#34; LABEL=&#34;UEFI&#34; UUID=&#34;0100-A4A7&#34; BLOCK_SIZE=&#34;512&#34; TYPE=&#34;vfat&#34; PARTUUID=&#34;1307abb3-75dd-4990-82f8-48bb2d69c5da&#34;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/dev/sda1: LABEL=&#34;cloudimg-rootfs&#34; UUID=&#34;206a406e-5432-46e5-82b5-66bed63992ba&#34; BLOCK_SIZE=&#34;4096&#34; TYPE=&#34;ext4&#34; PARTUUID=&#34;0b4f381f-b07c-435c-8947-0d6e545b4518&#34;
+</span></span><span class="line"><span class="cl">/dev/sda14: PARTUUID=&#34;ea7c39ab-f4de-475b-b996-0617a04d4705&#34;
+</span></span><span class="line"><span class="cl">/dev/sda15: LABEL_FATBOOT=&#34;UEFI&#34; LABEL=&#34;UEFI&#34; UUID=&#34;0100-A4A7&#34; BLOCK_SIZE=&#34;512&#34; TYPE=&#34;vfat&#34; PARTUUID=&#34;1307abb3-75dd-4990-82f8-48bb2d69c5da&#34;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>查询设备分区信息</li>
@@ -185,12 +185,12 @@
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
-sda       8:0    0 46.6G  0 disk 
-|-sda1    8:1    0 46.5G  0 part /
-|-sda14   8:14   0    4M  0 part 
-`-sda15   8:15   0  106M  0 part /boot
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+</span></span><span class="line"><span class="cl">sda       8:0    0 46.6G  0 disk 
+</span></span><span class="line"><span class="cl">|-sda1    8:1    0 46.5G  0 part /
+</span></span><span class="line"><span class="cl">|-sda14   8:14   0    4M  0 part 
+</span></span><span class="line"><span class="cl">`-sda15   8:15   0  106M  0 part /boot
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="创建chroot环境">创建chroot环境</h2>
 <ul>
@@ -203,10 +203,10 @@ sda       8:0    0 46.6G  0 disk
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cd /tmp
-wget http://mirrors.cat.net/archlinux/iso/latest/archlinux-bootstrap-2020.12.01-x86_64.tar.gz
-tar xzf archlinux-bootstrap-*-x86_64.tar.gz
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd /tmp
+</span></span><span class="line"><span class="cl">wget http://mirrors.cat.net/archlinux/iso/latest/archlinux-bootstrap-2020.12.01-x86_64.tar.gz
+</span></span><span class="line"><span class="cl">tar xzf archlinux-bootstrap-*-x86_64.tar.gz
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>选择源</li>
@@ -216,8 +216,8 @@ tar xzf archlinux-bootstrap-*-x86_64.tar.gz
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">echo &#39;Server = http://mirrors.cat.net/archlinux/$repo/os/$arch&#39; &gt; root.x86_64/etc/pacman.d/mirrorlist
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">echo &#39;Server = http://mirrors.cat.net/archlinux/$repo/os/$arch&#39; &gt; root.x86_64/etc/pacman.d/mirrorlist
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>chroot (这一步操作时会报错，但实际已成功chroot)</li>
@@ -227,8 +227,8 @@ tar xzf archlinux-bootstrap-*-x86_64.tar.gz
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">/tmp/root.x86_64/bin/arch-chroot /tmp/root.x86_64/
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/tmp/root.x86_64/bin/arch-chroot /tmp/root.x86_64/
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="使用chroot环境安装系统">使用chroot环境安装系统</h2>
 <ul>
@@ -240,9 +240,9 @@ tar xzf archlinux-bootstrap-*-x86_64.tar.gz
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">pacman-key --init
-pacman-key --populate archlinux
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pacman-key --init
+</span></span><span class="line"><span class="cl">pacman-key --populate archlinux
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>挂载设备（最好和原系统保持一致）</li>
@@ -253,9 +253,9 @@ pacman-key --populate archlinux
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">mount /dev/sda1 /mnt
-mount /dev/sda15 /mnt/boot
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mount /dev/sda1 /mnt
+</span></span><span class="line"><span class="cl">mount /dev/sda15 /mnt/boot
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>删除旧系统</li>
@@ -295,8 +295,8 @@ mount /dev/sda15 /mnt/boot
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">pacstrap /mnt base base-devel linux openssh nano neofetch
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pacstrap /mnt base base-devel linux openssh nano neofetch
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>chroot，进入目标系统</li>
@@ -306,8 +306,8 @@ mount /dev/sda15 /mnt/boot
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">arch-chroot /mnt
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">arch-chroot /mnt
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="完善系统">完善系统</h2>
 <ul>
@@ -319,9 +319,9 @@ mount /dev/sda15 /mnt/boot
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-hwclock --systohc
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</span></span><span class="line"><span class="cl">hwclock --systohc
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>本地化</li>
@@ -333,10 +333,10 @@ hwclock --systohc
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">echo &#39;en_US.UTF-8 UTF-8&#39; &gt; /etc/locale.gen
-locale-gen
-echo &#39;LANG=en_US.UTF-8&#39; &gt; /etc/locale.conf
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">echo &#39;en_US.UTF-8 UTF-8&#39; &gt; /etc/locale.gen
+</span></span><span class="line"><span class="cl">locale-gen
+</span></span><span class="line"><span class="cl">echo &#39;LANG=en_US.UTF-8&#39; &gt; /etc/locale.conf
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>网络设置</li>
@@ -361,23 +361,23 @@ echo &#39;LANG=en_US.UTF-8&#39; &gt; /etc/locale.conf
 </span><span class="lnt">16
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">echo &#39;oraclecloud&#39; &gt; /etc/hostname
-
-cat &lt;&lt; EOF &gt; /etc/hosts
-127.0.0.1   localhost
-::1         localhost
-127.0.1.1   oraclecloud.localdomain   oraclecloud
-EOF
-
-cat &lt;&lt; EOF &gt; /etc/systemd/network/20-wired.network
-[Match]
-Name=ens3
-[Network]
-DHCP=ipv4
-EOF
-
-systemctl enable systemd-networkd
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">echo &#39;oraclecloud&#39; &gt; /etc/hostname
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cat &lt;&lt; EOF &gt; /etc/hosts
+</span></span><span class="line"><span class="cl">127.0.0.1   localhost
+</span></span><span class="line"><span class="cl">::1         localhost
+</span></span><span class="line"><span class="cl">127.0.1.1   oraclecloud.localdomain   oraclecloud
+</span></span><span class="line"><span class="cl">EOF
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cat &lt;&lt; EOF &gt; /etc/systemd/network/20-wired.network
+</span></span><span class="line"><span class="cl">[Match]
+</span></span><span class="line"><span class="cl">Name=ens3
+</span></span><span class="line"><span class="cl">[Network]
+</span></span><span class="line"><span class="cl">DHCP=ipv4
+</span></span><span class="line"><span class="cl">EOF
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">systemctl enable systemd-networkd
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>SSH</li>
@@ -390,10 +390,10 @@ systemctl enable systemd-networkd
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">PermitRootLogin yes
-ClientAliveInterval 60
-ClientAliveCountMax 360
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">PermitRootLogin yes
+</span></span><span class="line"><span class="cl">ClientAliveInterval 60
+</span></span><span class="line"><span class="cl">ClientAliveCountMax 360
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>创建 /root/.ssh/authorized_keys 文件，添加个人的 id_rsa.pub ，并设置文件权限为0600。</p>
 <p>自启动sshd</p>
@@ -402,8 +402,8 @@ ClientAliveCountMax 360
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">systemctl enable sshd
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl enable sshd
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>设置boot</li>
@@ -414,8 +414,8 @@ ClientAliveCountMax 360
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">bootctl install
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">bootctl install
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>配置 loader.conf 和 arch.conf 文件</p>
 <div class="highlight"><div class="chroma">
@@ -434,19 +434,19 @@ ClientAliveCountMax 360
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cat &lt;&lt; EOF &gt; /boot/loader/loader.conf
-timeout       2
-default       arch
-console-mode  auto
-EOF
-
-cat &lt;&lt; EOF &gt; /boot/loader/entries/arch.conf
-title   Arch Linux
-linux   /vmlinuz-linux
-initrd  /initramfs-linux.img
-options root=&#34;LABEL=cloudimg-rootfs&#34;  rw
-EOF
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cat &lt;&lt; EOF &gt; /boot/loader/loader.conf
+</span></span><span class="line"><span class="cl">timeout       2
+</span></span><span class="line"><span class="cl">default       arch
+</span></span><span class="line"><span class="cl">console-mode  auto
+</span></span><span class="line"><span class="cl">EOF
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cat &lt;&lt; EOF &gt; /boot/loader/entries/arch.conf
+</span></span><span class="line"><span class="cl">title   Arch Linux
+</span></span><span class="line"><span class="cl">linux   /vmlinuz-linux
+</span></span><span class="line"><span class="cl">initrd  /initramfs-linux.img
+</span></span><span class="line"><span class="cl">options root=&#34;LABEL=cloudimg-rootfs&#34;  rw
+</span></span><span class="line"><span class="cl">EOF
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>设置root密码</li>
@@ -456,8 +456,8 @@ EOF
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">passwd
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">passwd
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="进入新系统">进入新系统</h2>
 <p>连续输入两次 exit 退出到原系统， 然后 reboot 重启，等待几分钟后，重新连接ssh,进入则表明重装成功。</p>
@@ -571,7 +571,7 @@ EOF
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
   <script type="text/javascript">
     window.MathJax = {
       tex: {

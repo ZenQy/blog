@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.92.2 with theme even" />
+<meta name="generator" content="Hugo 0.99.1 with theme even" />
 
 
 <link rel="canonical" href="https://blog.940940.xyz/post/2021/08/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinuxarm%E7%AF%87/" />
@@ -164,11 +164,11 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">apt update
-apt install debootstrap
-mkdir /tmp/stable-chroot
-debootstrap stable /tmp/stable-chroot http://deb.debian.org/debian/
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">apt update
+</span></span><span class="line"><span class="cl">apt install debootstrap
+</span></span><span class="line"><span class="cl">mkdir /tmp/stable-chroot
+</span></span><span class="line"><span class="cl">debootstrap stable /tmp/stable-chroot http://deb.debian.org/debian/
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>chroot</li>
@@ -184,14 +184,14 @@ debootstrap stable /tmp/stable-chroot http://deb.debian.org/debian/
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cd /tmp/stable-chroot
-cp /etc/resolv.conf etc
-mount -t proc /proc proc
-mount --make-rslave --rbind /sys sys
-mount --make-rslave --rbind /dev dev
-mount --make-rslave --rbind /run run
-chroot ./ /bin/bash
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd /tmp/stable-chroot
+</span></span><span class="line"><span class="cl">cp /etc/resolv.conf etc
+</span></span><span class="line"><span class="cl">mount -t proc /proc proc
+</span></span><span class="line"><span class="cl">mount --make-rslave --rbind /sys sys
+</span></span><span class="line"><span class="cl">mount --make-rslave --rbind /dev dev
+</span></span><span class="line"><span class="cl">mount --make-rslave --rbind /run run
+</span></span><span class="line"><span class="cl">chroot ./ /bin/bash
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="使用chroot环境安装系统">使用chroot环境安装系统</h2>
 <p>挂载设备、删除旧系统部分，与前文一致，不作赘述。</p>
@@ -207,11 +207,11 @@ chroot ./ /bin/bash
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">apt update
-apt install wget
-wget http://os.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz
-tar -xpf ArchLinuxARM-aarch64-latest.tar.gz -C /mnt
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">apt update
+</span></span><span class="line"><span class="cl">apt install wget
+</span></span><span class="line"><span class="cl">wget http://os.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz
+</span></span><span class="line"><span class="cl">tar -xpf ArchLinuxARM-aarch64-latest.tar.gz -C /mnt
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>chroot，进入目标系统</li>
@@ -226,13 +226,13 @@ tar -xpf ArchLinuxARM-aarch64-latest.tar.gz -C /mnt
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cd /mnt
-mount -t proc /proc proc
-mount --make-rslave --rbind /sys sys
-mount --make-rslave --rbind /dev dev
-mount --make-rslave --rbind /run run
-chroot /mnt /bin/bash
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd /mnt
+</span></span><span class="line"><span class="cl">mount -t proc /proc proc
+</span></span><span class="line"><span class="cl">mount --make-rslave --rbind /sys sys
+</span></span><span class="line"><span class="cl">mount --make-rslave --rbind /dev dev
+</span></span><span class="line"><span class="cl">mount --make-rslave --rbind /run run
+</span></span><span class="line"><span class="cl">chroot /mnt /bin/bash
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>初始化 pacman keyring</li>
@@ -243,9 +243,9 @@ chroot /mnt /bin/bash
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">pacman-key --init
-pacman-key --populate archlinuxarm
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pacman-key --init
+</span></span><span class="line"><span class="cl">pacman-key --populate archlinuxarm
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="完善系统">完善系统</h2>
 <p>以下部分与前文一致，不作赘述。</p>
@@ -272,11 +272,11 @@ pacman-key --populate archlinuxarm
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">title   Arch Linux
-linux   /Image
-initrd  /initramfs-linux.img
-options root=&#34;LABEL=cloudimg-rootfs&#34;  rw
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">title   Arch Linux
+</span></span><span class="line"><span class="cl">linux   /Image
+</span></span><span class="line"><span class="cl">initrd  /initramfs-linux.img
+</span></span><span class="line"><span class="cl">options root=&#34;LABEL=cloudimg-rootfs&#34;  rw
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="进入新系统">进入新系统</h2>
 <p>连续输入两次 exit 退出到原系统， 然后 reboot 重启，等待几分钟后，重新连接ssh,进入则表明重装成功。</p>
@@ -390,7 +390,7 @@ options root=&#34;LABEL=cloudimg-rootfs&#34;  rw
 
 
 
-<script type="text/javascript" src="/js/main.min.c99b103c33d1539acf3025e1913697534542c4a5aa5af0ccc20475ed2863603b.js"></script>
+<script type="text/javascript" src="/js/main.min.64437849d125a2d603b3e71d6de5225d641a32d17168a58106e0b61852079683.js"></script>
   <script type="text/javascript">
     window.MathJax = {
       tex: {

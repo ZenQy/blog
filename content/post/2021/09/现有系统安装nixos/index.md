@@ -113,3 +113,14 @@ sudo mv nixos /mnt/root/
 ```
 
 ![img](2022-03-20_14-32.png)
+
+## 常见问题
+
+1. ailed to create file via template ‘/tmp/tmp.XXXXXXXXXX’: No such file or directory
+答：手动创建/tmp文件夹
+
+2. chroot: failed to run command ‘systemd-tmpfiles’: No such file or directory
+答：没找到解决方案，有时不影响，可以成功进入系统，有时却不可以
+
+3. nixos-install 过程中直接killed
+答：系统内存不足，不用官方ubuntu系统，改用debian、arch或nixos就能成功
