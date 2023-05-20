@@ -1,157 +1,78 @@
-<?xml-stylesheet type="text/xsl" href="https://blog.940940.xyz/sitemap.xsl"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blog.940940.xyz/tags/nixos/</loc>
     <lastmod>2021-09-16T18:02:28+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.940940.xyz/post/</loc>
     <lastmod>2021-09-16T18:02:28+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.940940.xyz/tags/</loc>
     <lastmod>2021-09-16T18:02:28+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.940940.xyz/tags/vps/</loc>
     <lastmod>2021-09-16T18:02:28+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.940940.xyz/</loc>
     <lastmod>2021-09-16T18:02:28+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.940940.xyz/post/2021/09/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85nixos/</loc>
+  </url><url>
+    <loc>https://blog.940940.xyz/p/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85nixos/</loc>
     <lastmod>2021-09-16T18:02:28+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.940940.xyz/tags/archlinux/</loc>
     <lastmod>2021-08-06T18:29:32+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.940940.xyz/post/2021/08/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinuxarm%E7%AF%87/</loc>
+  </url><url>
+    <loc>https://blog.940940.xyz/p/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinuxarm%E7%AF%87/</loc>
     <lastmod>2021-08-06T18:29:32+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.940940.xyz/post/2020/12/vps%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/</loc>
+  </url><url>
+    <loc>https://blog.940940.xyz/p/vps%E4%B8%80%E9%94%AE%E8%84%9A%E6%9C%AC%E6%94%B6%E9%9B%86/</loc>
     <lastmod>2020-12-05T11:31:05+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.940940.xyz/post/2020/12/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinux/</loc>
+  </url><url>
+    <loc>https://blog.940940.xyz/p/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinux/</loc>
     <lastmod>2020-12-04T19:29:32+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.940940.xyz/tags/adnroid/</loc>
     <lastmod>2020-10-24T11:37:29+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.940940.xyz/tags/app/</loc>
     <lastmod>2020-10-24T11:37:29+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.940940.xyz/post/2020/10/my-android-app-list/</loc>
+  </url><url>
+    <loc>https://blog.940940.xyz/p/my-android-app-list/</loc>
     <lastmod>2020-10-24T11:37:29+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.940940.xyz/tags/%E6%9C%BA%E9%A1%B6%E7%9B%92/</loc>
     <lastmod>2020-04-11T19:37:29+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.940940.xyz/tags/%E9%AD%94%E7%99%BE%E7%9B%92/</loc>
     <lastmod>2020-04-11T19:37:29+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.940940.xyz/post/2020/04/%E9%AD%94%E7%99%BE%E7%9B%92cm201-2%E5%88%B7%E6%9C%BA/</loc>
+  </url><url>
+    <loc>https://blog.940940.xyz/p/%E9%AD%94%E7%99%BE%E7%9B%92cm201-2%E5%88%B7%E6%9C%BA/</loc>
     <lastmod>2020-04-11T19:37:29+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.940940.xyz/tags/%E5%88%B7%E6%9C%BA/</loc>
     <lastmod>2020-04-11T19:37:29+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.940940.xyz/post/2020/01/2020%E5%B9%B4%E8%AE%A1%E5%88%92/</loc>
+  </url><url>
+    <loc>https://blog.940940.xyz/p/2020%E5%B9%B4%E8%AE%A1%E5%88%92/</loc>
     <lastmod>2020-01-01T19:37:29+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.940940.xyz/tags/%E8%AE%A1%E5%88%92/</loc>
     <lastmod>2020-01-01T19:37:29+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://blog.940940.xyz/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/</loc>
     <lastmod>2019-12-22T21:28:03+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.940940.xyz/post/2019/12/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</loc>
+  </url><url>
+    <loc>https://blog.940940.xyz/p/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2019-12-22T21:28:03+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://blog.940940.xyz/archives/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.940940.xyz/page/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://blog.940940.xyz/categories/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
+  </url><url>
+    <loc>https://blog.940940.xyz/search/</loc>
   </url>
-  
 </urlset>

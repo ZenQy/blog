@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='前言 最近改用nixos，当然希望vps也能安装相同的系统。virmach家可通过netboot,xyz安装，比较方便。但手上有一台vps,商'>
+<title>现有系统安装nixos</title>
+
+<link rel='canonical' href='https://blog.940940.xyz/p/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85nixos/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='现有系统安装nixos'>
+<meta property='og:description' content='前言 最近改用nixos，当然希望vps也能安装相同的系统。virmach家可通过netboot,xyz安装，比较方便。但手上有一台vps,商'>
+<meta property='og:url' content='https://blog.940940.xyz/p/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85nixos/'>
+<meta property='og:site_name' content='ZenQy&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='nixos' /><meta property='article:tag' content='vps' /><meta property='article:published_time' content='2021-09-16T18:02:28&#43;08:00'/><meta property='article:modified_time' content='2021-09-16T18:02:28&#43;08:00'/>
+<meta name="twitter:title" content="现有系统安装nixos">
+<meta name="twitter:description" content="前言 最近改用nixos，当然希望vps也能安装相同的系统。virmach家可通过netboot,xyz安装，比较方便。但手上有一台vps,商">
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-155748743-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu8b6adab9c03de5b4cfb9034d2d009001_30284_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🏝</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">ZenQy&#39;s Blog</a></h1>
+            <h2 class="site-description">君子藏器於身，待時而動</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/ZenQy/blog'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#内存安装最小化系统">内存安装最小化系统</a></li>
+    <li><a href="#准备环境">准备环境</a></li>
+    <li><a href="#安装nix工具和新系统">安装<code>nix</code>工具和新系统</a></li>
+    <li><a href="#常见问题">常见问题</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85nixos/">现有系统安装nixos</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2021-09-16</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="前言">前言</h2>
+<p>最近改用<code>nixos</code>，当然希望vps也能安装相同的系统。<code>virmach</code>家可通过<code>netboot,xyz</code>安装，比较方便。但手上有一台vps,商家只支持<code>debian</code>和<code>centos</code>，只能自己想办法安装。</p>
+<h2 id="内存安装最小化系统">内存安装最小化系统</h2>
+<p>此处使用的是<a class="link" href="https://github.com/Jamesits/menhera.sh"  target="_blank" rel="noopener"
+    >menhera.sh</a>方案，在使用前记得备份好网络等重要信息。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget https://raw.githubusercontent.com/Jamesits/menhera.sh/master/menhera.sh
+</span></span><span class="line"><span class="cl">chmod +x menhera.sh
+</span></span><span class="line"><span class="cl">./menhera.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>根据提示即可安装成功，然后重启进入新系统。</p>
+<h2 id="准备环境">准备环境</h2>
+<p>查看磁盘挂载情况，旧系统根目录挂载在<code>/mnt/oldroot</code>,删除磁盘原有文件。同时防止内存不足，将/nix挂载到硬盘，如果有交换区，可以开启。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rm -rf /mnt/oldroot/*
+</span></span><span class="line"><span class="cl">mkdir /mnt/oldroot/xxx
+</span></span><span class="line"><span class="cl">mkdir /nix
+</span></span><span class="line"><span class="cl">mount -o <span class="nb">bind</span> /mnt/oldroot/xxx /nix
+</span></span><span class="line"><span class="cl">swapon /dev/vda2
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装必要的工具。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt update
+</span></span><span class="line"><span class="cl">apt install -y wget curl xz-utils sudo git nano
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>创建相关组和用户</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">groupadd -g <span class="m">30000</span> nixbld
+</span></span><span class="line"><span class="cl">useradd -m -u <span class="m">30000</span> -g nixbld -G nixbld -s /bin/bash nixbld
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>nixbld</code>用户添加<code>sudo</code>权限，并添加<code>nixUnstable</code>配置，同时变更/nix所属</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;nixbld  ALL=(ALL) NOPASSWD: ALL&#34;</span> &gt;&gt; /etc/sudoers
+</span></span><span class="line"><span class="cl">mkdir -p /etc/nix
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;experimental-features = nix-command flakes&#34;</span> &gt; /etc/nix/nix.conf
+</span></span><span class="line"><span class="cl">chown -R nixbld /nix
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>切换至<code>nixbld</code>用户</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">su nixbld
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ~
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="安装nix工具和新系统">安装<code>nix</code>工具和新系统</h2>
+<p><del>此处使用<a class="link" href="https://github.com/numtide/nix-unstable-installer"  target="_blank" rel="noopener"
+    >nix-unstable-installer</a>方案。</del></p>
+<p>官方稳定版已经支持<code>nix flake</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -L https://nixos.org/nix/install <span class="p">|</span> sh
+</span></span><span class="line"><span class="cl">. <span class="nv">$HOME</span>/.nix-profile/etc/profile.d/nix.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>更新channel</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">nix-channel --update
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>安装<code>nixos-install-tools</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nix-env -f <span class="s1">&#39;&lt;nixpkgs&gt;&#39;</span> -iA nixos-install-tools
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>创建配置文件，配置文件默认安装在<code>/mnt/etc/nixos</code>（可选,注意：此处UUID错误，需要修改）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo <span class="sb">`</span>which nixos-generate-config<span class="sb">`</span> --root /mnt/oldroot
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>因为我已经提前准备好配置，所以不需要上一步，或者仅需要上一步产生的<code>hardware-configuration.nix</code>，修改好配置后进行安装。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone git@github.com:ZenQy/nixos.git
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> nixos
+</span></span><span class="line"><span class="cl">cp /mnt/oldroot/etc/nixos/hardware-configuration.nix host/cc/hardware.nix
+</span></span><span class="line"><span class="cl">sudo <span class="nv">PATH</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$PATH</span><span class="s2">&#34;</span> <span class="sb">`</span>which nixos-install<span class="sb">`</span> --root /mnt/oldroot --flake .#cc
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果安装时报错，无需担心，重新切换到nixbld用户，再次安装即可成功。
+重启即可进入新系统，重启前可以考虑把配置文件转移到新系统中,重启后记得删除/xxx文件夹。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ../
+</span></span><span class="line"><span class="cl">sudo mv nixos /mnt/root/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="/p/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85nixos/2022-03-20_14-32.png"
+	width="1166"
+	height="569"
+	srcset="/p/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85nixos/2022-03-20_14-32_huc051f58c500a539f4e60b3142beb3c74_248554_480x0_resize_box_3.png 480w, /p/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85nixos/2022-03-20_14-32_huc051f58c500a539f4e60b3142beb3c74_248554_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="img"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="204"
+		data-flex-basis="491px"
+	
+></p>
+<h2 id="常见问题">常见问题</h2>
+<ol>
+<li>
+<p>ailed to create file via template ‘/tmp/tmp.XXXXXXXXXX’: No such file or directory
+答：手动创建/tmp文件夹</p>
+</li>
+<li>
+<p>chroot: failed to run command ‘systemd-tmpfiles’: No such file or directory
+答：没找到解决方案，有时不影响，可以成功进入系统，有时却不可以</p>
+</li>
+<li>
+<p>nixos-install 过程中直接killed
+答：系统内存不足，不用官方ubuntu系统，改用debian、arch或nixos就能成功</p>
+</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/nixos/">nixos</a>
+        
+            <a href="/tags/vps/">vps</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    <div id="gitalk-container"></div>
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.18.0/js/md5.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: "8cef975f233522795b25",
+        clientSecret: "a1522396ebc001fc71f45ea79fe4b48a77387089",
+        repo: "blog",
+        owner: "zenqy",
+        admin: ["[zenqy]"],
+        distractionFreeMode: false, 
+        id: md5(location.pathname), 
+    });
+    (function () {
+        if (
+            ["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1
+        ) {
+            document.getElementById("gitalk-container").innerHTML =
+                "Gitalk comments not available by default when the website is previewed locally.";
+            return;
+        }
+        gitalk.render("gitalk-container");
+    })();
+</script>
+
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2023 ZenQy&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

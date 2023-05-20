@@ -22,9 +22,7 @@ toc: true
 
 机顶盒完全断电，通电后立即不停交替按遥控器菜单键和音量减键，即可进入Recovery模式。
 
-{{% admonition type="note" title="补充说明" details="true" %}}
 条件苛刻，可能需尝试多次才能成功。
-{{% /admonition %}}
 
 ## 连接设备
 
@@ -36,9 +34,7 @@ toc: true
 
 > adb connect <设备ip>
 
-{{% admonition type="note" title="" details="false" %}}
 该方法未在原版系统尝试
-{{% /admonition %}}
 
 ### Serial方式
 

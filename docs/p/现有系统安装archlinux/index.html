@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='前言 本人对比较喜欢ArchLinux，使用的vps基本对会使用vps2arch脚本，将系统变更为ArchLinux。今天从OracleClo'>
+<title>现有系统安装ArchLinux</title>
+
+<link rel='canonical' href='https://blog.940940.xyz/p/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinux/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='现有系统安装ArchLinux'>
+<meta property='og:description' content='前言 本人对比较喜欢ArchLinux，使用的vps基本对会使用vps2arch脚本，将系统变更为ArchLinux。今天从OracleClo'>
+<meta property='og:url' content='https://blog.940940.xyz/p/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinux/'>
+<meta property='og:site_name' content='ZenQy&#39;s Blog'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ArchLinux' /><meta property='article:tag' content='vps' /><meta property='article:published_time' content='2020-12-04T19:29:32&#43;08:00'/><meta property='article:modified_time' content='2020-12-04T19:29:32&#43;08:00'/>
+<meta name="twitter:title" content="现有系统安装ArchLinux">
+<meta name="twitter:description" content="前言 本人对比较喜欢ArchLinux，使用的vps基本对会使用vps2arch脚本，将系统变更为ArchLinux。今天从OracleClo">
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-155748743-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu8b6adab9c03de5b4cfb9034d2d009001_30284_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🏝</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">ZenQy&#39;s Blog</a></h1>
+            <h2 class="site-description">君子藏器於身，待時而動</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/ZenQy/blog'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#前期准备">前期准备</a></li>
+    <li><a href="#创建chroot环境">创建chroot环境</a></li>
+    <li><a href="#使用chroot环境安装系统">使用chroot环境安装系统</a></li>
+    <li><a href="#完善系统">完善系统</a></li>
+    <li><a href="#进入新系统">进入新系统</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinux/">现有系统安装ArchLinux</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2020-12-04</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="前言">前言</h2>
+<p>本人对比较喜欢<code>ArchLinux</code>，使用的<code>vps</code>基本对会使用<a class="link" href="https://github.com/felixonmars/vps2arch"  target="_blank" rel="noopener"
+    >vps2arch</a>脚本，将系统变更为<code>ArchLinux</code>。今天从<code>OracleCloud</code>薅羊毛，得到永久免费<code>vps</code>，自然想安装<code>ArchLinux</code>，但<code>OracleCloud</code>使用的是<code>UEFI</code>启动方式，vps2arch 脚本不再适用，不得不手动安装，特此记录。</p>
+<p>实际上，与在已有系统安装<code>ArchLinux</code>类似，区别仅仅是安装位置是原系统所在分区，安装前需删除原系统数据。</p>
+<h2 id="前期准备">前期准备</h2>
+<ul>
+<li>查询设备UUID信息</li>
+</ul>
+<blockquote>
+<p>blkid</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/dev/sda1: LABEL=&#34;cloudimg-rootfs&#34; UUID=&#34;206a406e-5432-46e5-82b5-66bed63992ba&#34; BLOCK_SIZE=&#34;4096&#34; TYPE=&#34;ext4&#34; PARTUUID=&#34;0b4f381f-b07c-435c-8947-0d6e545b4518&#34;
+</span></span><span class="line"><span class="cl">/dev/sda14: PARTUUID=&#34;ea7c39ab-f4de-475b-b996-0617a04d4705&#34;
+</span></span><span class="line"><span class="cl">/dev/sda15: LABEL_FATBOOT=&#34;UEFI&#34; LABEL=&#34;UEFI&#34; UUID=&#34;0100-A4A7&#34; BLOCK_SIZE=&#34;512&#34; TYPE=&#34;vfat&#34; PARTUUID=&#34;1307abb3-75dd-4990-82f8-48bb2d69c5da&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>查询设备分区信息</li>
+</ul>
+<blockquote>
+<p>lsblk</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+</span></span><span class="line"><span class="cl">sda       8:0    0 46.6G  0 disk 
+</span></span><span class="line"><span class="cl">|-sda1    8:1    0 46.5G  0 part /
+</span></span><span class="line"><span class="cl">|-sda14   8:14   0    4M  0 part 
+</span></span><span class="line"><span class="cl">`-sda15   8:15   0  106M  0 part /boot
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="创建chroot环境">创建chroot环境</h2>
+<ul>
+<li>下载并解压bootstrap（因本人选择的大阪机房，所以选择日本的源）</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd /tmp
+</span></span><span class="line"><span class="cl">wget http://mirrors.cat.net/archlinux/iso/latest/archlinux-bootstrap-2020.12.01-x86_64.tar.gz
+</span></span><span class="line"><span class="cl">tar xzf archlinux-bootstrap-*-x86_64.tar.gz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>选择源</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">echo &#39;Server = http://mirrors.cat.net/archlinux/$repo/os/$arch&#39; &gt; root.x86_64/etc/pacman.d/mirrorlist
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>chroot (这一步操作时会报错，但实际已成功chroot)</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/tmp/root.x86_64/bin/arch-chroot /tmp/root.x86_64/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="使用chroot环境安装系统">使用chroot环境安装系统</h2>
+<ul>
+<li>初始化 pacman keyring</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pacman-key --init
+</span></span><span class="line"><span class="cl">pacman-key --populate archlinux
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>挂载设备（最好和原系统保持一致）</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mount /dev/sda1 /mnt
+</span></span><span class="line"><span class="cl">mount /dev/sda15 /mnt/boot
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>删除旧系统</li>
+</ul>
+<p>因为是在原系统上安装<code>AchLinux</code>，所以要删除原系统中的文件，但全删除后系统异常，无法继续安装，所以需保留必要文件。以下目录需保留，其余文件可全部删除。</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>目录/文件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>boot</td>
+<td>保留目录即可，内部文件可全部删除</td>
+</tr>
+<tr>
+<td>tmp</td>
+<td>bootstrap正在使用，不可删除</td>
+</tr>
+<tr>
+<td>dev、proc、run、sys</td>
+<td></td>
+</tr>
+<tr>
+<td>etc/{resolv.conf,fstab}</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>安装基础系统</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">pacstrap /mnt base base-devel linux openssh nano neofetch
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>chroot，进入目标系统</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">arch-chroot /mnt
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="完善系统">完善系统</h2>
+<ul>
+<li>时区，此处选择东八区</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</span></span><span class="line"><span class="cl">hwclock --systohc
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>本地化</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">echo &#39;en_US.UTF-8 UTF-8&#39; &gt; /etc/locale.gen
+</span></span><span class="line"><span class="cl">locale-gen
+</span></span><span class="line"><span class="cl">echo &#39;LANG=en_US.UTF-8&#39; &gt; /etc/locale.conf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>网络设置</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">echo &#39;oraclecloud&#39; &gt; /etc/hostname
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cat &lt;&lt; EOF &gt; /etc/hosts
+</span></span><span class="line"><span class="cl">127.0.0.1   localhost
+</span></span><span class="line"><span class="cl">::1         localhost
+</span></span><span class="line"><span class="cl">127.0.1.1   oraclecloud.localdomain   oraclecloud
+</span></span><span class="line"><span class="cl">EOF
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cat &lt;&lt; EOF &gt; /etc/systemd/network/20-wired.network
+</span></span><span class="line"><span class="cl">[Match]
+</span></span><span class="line"><span class="cl">Name=ens3
+</span></span><span class="line"><span class="cl">[Network]
+</span></span><span class="line"><span class="cl">DHCP=ipv4
+</span></span><span class="line"><span class="cl">EOF
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">systemctl enable systemd-networkd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>SSH</li>
+</ul>
+<p>在 /etc/ssh/sshd_config 变更以下设置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">PermitRootLogin yes
+</span></span><span class="line"><span class="cl">ClientAliveInterval 60
+</span></span><span class="line"><span class="cl">ClientAliveCountMax 360
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>创建 /root/.ssh/authorized_keys 文件，添加个人的 id_rsa.pub ，并设置文件权限为0600。</p>
+<p>自启动sshd</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">systemctl enable sshd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>设置boot</li>
+</ul>
+<p>本人喜欢 systemd-boot ，所以使用它作为启动引导。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">bootctl install
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>配置 loader.conf 和 arch.conf 文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cat &lt;&lt; EOF &gt; /boot/loader/loader.conf
+</span></span><span class="line"><span class="cl">timeout       2
+</span></span><span class="line"><span class="cl">default       arch
+</span></span><span class="line"><span class="cl">console-mode  auto
+</span></span><span class="line"><span class="cl">EOF
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cat &lt;&lt; EOF &gt; /boot/loader/entries/arch.conf
+</span></span><span class="line"><span class="cl">title   Arch Linux
+</span></span><span class="line"><span class="cl">linux   /vmlinuz-linux
+</span></span><span class="line"><span class="cl">initrd  /initramfs-linux.img
+</span></span><span class="line"><span class="cl">options root=&#34;LABEL=cloudimg-rootfs&#34;  rw
+</span></span><span class="line"><span class="cl">EOF
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>设置root密码</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">passwd
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="进入新系统">进入新系统</h2>
+<p>连续输入两次 exit 退出到原系统， 然后 reboot 重启，等待几分钟后，重新连接ssh,进入则表明重装成功。</p>
+<p><img src="/p/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinux/2020-12-04_21-46.png"
+	width="909"
+	height="482"
+	srcset="/p/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinux/2020-12-04_21-46_huafaef487015b30141abd75b7c918e217_885410_480x0_resize_box_3.png 480w, /p/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinux/2020-12-04_21-46_huafaef487015b30141abd75b7c918e217_885410_1024x0_resize_box_3.png 1024w"
+	loading="lazy"
+	
+		alt="img"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="188"
+		data-flex-basis="452px"
+	
+></p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/archlinux/">ArchLinux</a>
+        
+            <a href="/tags/vps/">vps</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/%E7%8E%B0%E6%9C%89%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85archlinuxarm%E7%AF%87/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">现有系统安装ArchLinux（ARM篇）</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div id="gitalk-container"></div>
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.18.0/js/md5.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+        clientID: "8cef975f233522795b25",
+        clientSecret: "a1522396ebc001fc71f45ea79fe4b48a77387089",
+        repo: "blog",
+        owner: "zenqy",
+        admin: ["[zenqy]"],
+        distractionFreeMode: false, 
+        id: md5(location.pathname), 
+    });
+    (function () {
+        if (
+            ["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1
+        ) {
+            document.getElementById("gitalk-container").innerHTML =
+                "Gitalk comments not available by default when the website is previewed locally.";
+            return;
+        }
+        gitalk.render("gitalk-container");
+    })();
+</script>
+
+
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2020 - 
+        
+        2023 ZenQy&#39;s Blog
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
