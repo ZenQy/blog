@@ -2,18 +2,17 @@ baseurl: https://blog.940940.xyz
 languageCode: en-us
 theme: stack
 paginate: 5
-title: ZenQy's Blog
-publishDir: docs
+title: Zenith's Blog
 
 languages:
     # en:
     #     languageName: English
-    #     title: ZenQy's Blog
+    #     title: Zenith's Blog
     #     description: Example description
     #     weight: 1
     zh-cn:
         languageName: 中文
-        title: ZenQy's Blog
+        title: Zenith's Blog
         weight: 2
 
 # Change it to your Disqus shortname before using
@@ -133,9 +132,9 @@ params:
             emitMetadata: 0
 
         gitalk:
-            owner: zenqy
+            owner: Zenith
             admin:
-              - zenqy
+              - Zenith
             repo: blog
             clientID: 8cef975f233522795b25
             clientSecret: a1522396ebc001fc71f45ea79fe4b48a77387089
@@ -194,7 +193,7 @@ menu:
     social:
         - identifier: github
           name: GitHub
-          url: https://github.com/ZenQy/blog
+          url: https://github.com/Zenith/blog
           params:
               icon: brand-github
 
