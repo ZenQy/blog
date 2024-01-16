@@ -1,7 +1,7 @@
 ---
 title: "Phicomm N1安装ArchLinuxARM"
 date: 2024-01-15T22:15:46+08:00
-draft: true
+draft: false
 ---
 
 ## 前言
