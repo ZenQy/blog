@@ -132,9 +132,9 @@ params:
             emitMetadata: 0
 
         gitalk:
-            owner: Zenith
+            owner: ZenQy
             admin:
-              - Zenith
+              - ZenQy
             repo: blog
             clientID: 8cef975f233522795b25
             clientSecret: a1522396ebc001fc71f45ea79fe4b48a77387089

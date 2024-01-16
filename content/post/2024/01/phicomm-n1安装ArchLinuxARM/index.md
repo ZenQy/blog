@@ -2,11 +2,15 @@
 title: "Phicomm N1安装ArchLinuxARM"
 date: 2024-01-15T22:15:46+08:00
 draft: false
+tags:
+ - archlinux
+ - "Phicomm N1"
+toc: true
 ---
 
 ## 前言
 
-**Phicomm N1**是非常热门的盒子，其`OpenWrt`和`Armbian`的资源非常丰富。之前我的N1盒子一直运行`OpenWrt`，但`OpenWrt`内核无法运行`dae`（至少我没能打包出支持bpf的内核），`sing-box`的前端我不太喜欢，因此有了更换系统的想法。
+**Phicomm N1**是非常热门的盒子，该盒子的`OpenWrt`和`Armbian`系统资源非常丰富。之前我的N1盒子一直运行`OpenWrt`，但`OpenWrt`内核无法运行`dae`（至少我没能打包出支持bpf的内核），`sing-box`的前端`luci-app-homeproxy`我不太喜欢，且自己又不会开发，因此有了更换系统的想法。
 
 ## 整体思路
 
@@ -14,7 +18,7 @@ draft: false
 
 ## 制作U盘
 
-可以在[ophub](https://github.com/ophub/amlogic-s9xxx-armbian/releases/)上下载`Armbian`镜像，比如：[Armbian_24.2.0_amlogic_s905d_jammy_6.6.11_server_2024.01.13.img.g](https://github.com/ophub/amlogic-s9xxx-armbian/releases/download/Armbian_jammy_save_2024.01/Armbian_24.2.0_amlogic_s905d_jammy_6.6.11_server_2024.01.13.img.gz)，解压后DD到U盘
+可以在[ophub](https://github.com/ophub/amlogic-s9xxx-armbian/releases/)上下载`Armbian`镜像，比如：[Armbian_24.2.0_amlogic_s905d_jammy_6.6.11_server_2024.01.13.img.gz](https://github.com/ophub/amlogic-s9xxx-armbian/releases/download/Armbian_jammy_save_2024.01/Armbian_24.2.0_amlogic_s905d_jammy_6.6.11_server_2024.01.13.img.gz)，解压后DD到U盘
 ```bash
 gzip -d Armbian_24.2.0_amlogic_s905d_jammy_6.6.11_server_2024.01.13.img.gz
 sudo dd if=Armbian_24.2.0_amlogic_s905d_jammy_6.6.11_server_2024.01.13.img of=/dev/sda status=progress
