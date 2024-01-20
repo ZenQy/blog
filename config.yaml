@@ -5,11 +5,6 @@ paginate: 5
 title: Zenith's Blog
 
 languages:
-    # en:
-    #     languageName: English
-    #     title: Zenith's Blog
-    #     description: Example description
-    #     weight: 1
     zh-cn:
         languageName: 中文
         title: Zenith's Blog
@@ -38,7 +33,7 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon:  # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
+    favicon: /favicon.ico
 
     footer:
         since: 2020
@@ -66,82 +61,13 @@ params:
 
     comments:
         enabled: true
-        provider: gitalk
-
-        disqusjs:
-            shortname:
-            apiUrl:
-            apiKey:
-            admin:
-            adminLabel:
+        provider: utterances
 
         utterances:
-            repo:
+            repo: ZenQy/blog
             issueTerm: pathname
             label:
 
-        remark42:
-            host:
-            site:
-            locale:
-
-        vssue:
-            platform:
-            owner:
-            repo:
-            clientId:
-            clientSecret:
-            autoCreateIssue: false
-
-        # Waline client configuration see: https://waline.js.org/en/reference/component.html
-        waline:
-            serverURL:
-            lang:
-            pageview:
-            emoji:
-                - https://unpkg.com/@waline/emojis@1.0.1/weibo
-            requiredMeta:
-                - name
-                - email
-                - url
-            locale:
-                admin: Admin
-                placeholder:
-
-        twikoo:
-            envId:
-            region:
-            path:
-            lang:
-
-        # See https://cactus.chat/docs/reference/web-client/#configuration for description of the various options
-        cactus:
-            defaultHomeserverUrl: "https://matrix.cactus.chat:8448"
-            serverName: "cactus.chat"
-            siteName: "" # You must insert a unique identifier here matching the one you registered (See https://cactus.chat/docs/getting-started/quick-start/#register-your-site)
-
-        giscus:
-            repo:
-            repoID:
-            category:
-            categoryID:
-            mapping:
-            lightTheme:
-            darkTheme:
-            reactionsEnabled: 1
-            emitMetadata: 0
-
-        gitalk:
-            owner: ZenQy
-            admin:
-              - ZenQy
-            repo: blog
-            clientID: 8cef975f233522795b25
-            clientSecret: a1522396ebc001fc71f45ea79fe4b48a77387089
-
-        cusdis:
-            host:
-            id:
     widgets:
         homepage:
             - type: search
@@ -193,7 +119,7 @@ menu:
     social:
         - identifier: github
           name: GitHub
-          url: https://github.com/Zenith/blog
+          url: https://github.com/ZenQy/blog
           params:
               icon: brand-github
 

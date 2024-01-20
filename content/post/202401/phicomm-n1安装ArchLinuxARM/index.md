@@ -5,7 +5,6 @@ draft: false
 tags:
  - archlinux
  - "Phicomm N1"
-toc: true
 ---
 
 ## 前言
