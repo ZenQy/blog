@@ -36,9 +36,10 @@ jobs:
       - name: Build with Hugo
         run: |
           hugo --minify
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        if: github.ref == 'refs/heads/main'
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          deploy_key: ${{ secrets.DEPLOY_KEY }}
-          publish_dir: ./public
+          path: './public'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
