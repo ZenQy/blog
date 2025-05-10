@@ -40,5 +40,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         if: github.ref == 'refs/heads/main'
         with:
-          personal_token: ${{ github.token }}
+          deploy_key: ${{ secrets.DEPLOY_KEY }}
           publish_dir: ./public
