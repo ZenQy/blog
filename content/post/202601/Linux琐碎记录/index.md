@@ -1,6 +1,6 @@
 ---
 date: "2026-01-23T20:42:53+08:00"
-draft: true
+draft: false
 title: "Linux琐碎记录"
 tags:
   - linux
