@@ -16,7 +16,7 @@ ip route add 192.168.1.1 dev eth0
 ip route add default via 192.168.1.1 dev eth0
 ```
 
-2. ipv4
+2. ipv6
 
 ```bash
 ip -6 addr add fe80::7270:fcff:fe03:2c08/64 dev eth0
