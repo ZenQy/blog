@@ -31,3 +31,9 @@ ip -6 route add default via fe80::10a9:f6ff::1 dev eth0
 ```
 # CONFIG_COMPRESSED_INSTALL is not set
 ```
+
+## 修复 Nixos 存储区
+
+```
+sudo nix-store --verify --check-contents --repair
+```
