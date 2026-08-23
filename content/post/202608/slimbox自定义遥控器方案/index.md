@@ -1,6 +1,6 @@
 ---
 date: "2026-08-23T22:35:17+08:00"
-draft: true
+draft: false
 title: "Slimbox自定义遥控器方案"
 tags:
   - 遥控器
