@@ -11,6 +11,7 @@ tags:
 1. ipv4
 
 ```bash
+ip link set eth0 up # 启用网卡
 ip addr add 192.168.1.11/24 dev eth0
 ip route add 192.168.1.1 dev eth0
 ip route add default via 192.168.1.1 dev eth0
@@ -36,4 +37,10 @@ ip -6 route add default via fe80::10a9:f6ff::1 dev eth0
 
 ```
 sudo nix-store --verify --check-contents --repair
+```
+
+## 切换到特定世代
+
+```
+sudo /nix/var/nix/profiles/system-61-link/bin/switch-to-configuration switch
 ```
